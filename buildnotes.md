@@ -1,8 +1,8 @@
-### paul.com WR-703N
-[video](http://www.youtube.com/watch?v=W7S1nUII1g8)
+### paul.com WR-703N:
+[http://www.youtube.com/watch?v=W7S1nUII1g8](http://www.youtube.com/watch?v=W7S1nUII1g8)
 
 ### 95% directions - do not install new open-wrt
-[Minipwner](http://minipwner.com/index.php/minipwner-build)
+[http://minipwner.com/index.php/minipwner-build](http://minipwner.com/index.php/minipwner-build)
 
 ### Ideas for automated WEP cracking
 -[Autocrack](https://code.google.com/p/autocrack/)
