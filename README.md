@@ -14,8 +14,11 @@ http://jontai.me/blog/2011/11/monitoring-dns-queries-with-tcpdump/
 1.) External drive should be encrypted. 
 
 http://oneitguy.com/blog/encrypted-remote-backup-openwrt
+
 https://dev.openwrt.org/ticket/10787
+
 http://gui-at.blogspot.com/2010/02/disk-encryption-in-openwrt.html
+
 http://sjoosten.nl/2013/06/luks-usb-stick.html
 
 2.) Once the SD card is mounted. Run a script that changes the device host name and mac address to something like an apple iphone/ipad or samsung android device. 
