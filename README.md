@@ -54,3 +54,15 @@ applications needed on router for dns exfil:
 > tunnel through port 53 (because it it is normally unblocked)
 
 9.) Lastly, win... (Navy/Russ)
+
+
+
+Class Requirement:
+----
+>"Create a remotely C2ed attack pivot box (assume no inbound connections to the device via the targets network), in the smallest form factor possible, including common open source tools, and demonstrate at least 3 TTPs this device could provide"
+
+>Bonus points for operator created tools!
+
+>Narrative for requirement:
+
+>A penetration tester gets access to an in scope building during a security audit.  They place this box inside the target network (wifi or hardline), and then leave.  They are then able to contact the box from their corporate office, allowing them to pivot into their clients network and conduct security testing without being hindered by the customers boundary protections.  
