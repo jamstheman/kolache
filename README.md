@@ -53,6 +53,8 @@ applications needed on router for dns exfil:
 
 > tunnel through port 53 (because it it is normally unblocked)
 
+> http://www.howtoforge.com/reverse-ssh-tunneling
+
 9.) Lastly, win... (Navy/Russ)
 
 
