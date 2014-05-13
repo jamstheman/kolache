@@ -1,5 +1,15 @@
 kolache
 =======
+
+Description
+----
+Create open source wifi-pineapple with the TP-LINK TL-WR703N
+
+Installation/Build Instructions
+----
+
+Additional Info and Links
+----
 applications needed on router for dns exfil:
 dig
 xxd
