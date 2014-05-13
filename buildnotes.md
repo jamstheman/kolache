@@ -19,3 +19,7 @@
 
 ### List of installable packages for WR-703N
 - [http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/] (http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/)
+
+
+### Another fun idea: (Does not have to be included in this project)
+- [http://www.zeroflux.org/projects/knock] (http://www.zeroflux.org/projects/knock)
