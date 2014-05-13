@@ -18,8 +18,11 @@
 -[BashWEP](https://code.google.com/p/bashwep/downloads/detail?name=BashWEP%20v2.0&can=2&q=)
 
 ### List of installable packages for WR-703N
-- [http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/] (http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/)
+-[http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/] (http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/)
 
+
+### If you want to compile your own:
+-[http://giovanni.wordpress.com/2011/01/23/how-to-cross-compile-a-c-program-for-openwrt/] (http://giovanni.wordpress.com/2011/01/23/how-to-cross-compile-a-c-program-for-openwrt/)
 
 ### Another fun idea: (Does not have to be included in this project)
 - [http://www.zeroflux.org/projects/knock] (http://www.zeroflux.org/projects/knock)
