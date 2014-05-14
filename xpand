@@ -14,7 +14,7 @@ usage (){
   exit 1
 }
 if [ $1 ]; then	
-  egrep -o "[0-9a-f]*.k.a.net" $1 | cut -d. -f1 | uniq >> $1.hex.out
+  egrep -o "[0-9a-f]*.k.a.net" $1 | cut -d. -f1 | grep -v ^\ | uniq >> $1.hex.out
   xxd -r -p $1.hex.out > $1.gz
   tar zxvf $1.gz -O > $1.xpand
   openssl aes-256-cbc -d -in $1.xpand -out $1.final -k 1234
