@@ -55,11 +55,20 @@ use List::Util qw( min max );
 open(WEP, "<out.txt");
 
 # for each line, put the 2nd column into @sigstrength
+foreach $line (<WEP>){
 
+  @fullline = split(',', $line);
+  push(@sigstrength, $fullline[1]);
 
+}
 
-#my $min = min @numbers;
-my $max = max @numbers;
+my $min = min @sigstrength;
+my $max = max @sigstrength;
+
+print "Min: $min\n";
+print "Max: $max\n";
+
+print @sigstrength;
 
 
 # after the pertenent data is parsed, then 
