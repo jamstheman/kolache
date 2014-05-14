@@ -55,7 +55,7 @@ applications needed on router for dns exfil:
 
 > http://www.howtoforge.com/reverse-ssh-tunneling
 
-9.) Lastly, win... (Navy/Russ)
+9.) Lastly, win... (Navy/Russ) Think man-in-the-middle attacks. dsniff, sslstrip, etc.
 
 
 
