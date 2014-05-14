@@ -4,6 +4,10 @@
 ### 95% directions - do not install new open-wrt
 [http://minipwner.com/index.php/minipwner-build](http://minipwner.com/index.php/minipwner-build)
 
+### How to crack WEP via command line
+-[http://www.youtube.com/watch?v=zuJtFX9UCzU](http://www.youtube.com/watch?v=zuJtFX9UCzU)
+
+
 ### Ideas for automated WEP cracking
 -[Autocrack](https://code.google.com/p/autocrack/)
 
