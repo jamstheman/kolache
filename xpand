@@ -1,4 +1,7 @@
 # this listener will need to be running on DNS server to catch the dns queries
+# this data could also come from log files (/var/log/query.log...depending on how the dns
+# server is configured
+
 tcpdump -vvv -s 0 -l -n port 53 > xfil.tcpdump
 
 
