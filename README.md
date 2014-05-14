@@ -43,7 +43,7 @@ applications needed on router for dns exfil:
 
 7.) The WR-703N will exfil some data. All data should be encrypted with openssl before exfiltration.
 
-> tar -P -zcf - $dirname | openssl aes-128-cbc -out $dirname.tar.gz -k 1234
+> tar -P -zcf - $dirname | openssl aes-256-cbc -out $dirname.tar.gz -k 1234
 
 (tar/gzip everything in a given directory. AES-128 encrpt file. set the password to the file as "1234")
 
