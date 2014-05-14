@@ -15,10 +15,10 @@ usage (){
 }
 if [ $1 ]; then	
   egrep -o "[0-9a-f]*.k.a.net" $1 | cut -d. -f1 | uniq >> $1.hex.out
-  xxd -r -p $1.hex.out > $1.xpand
+  xxd -r -p $1.hex.out > $1.gz
+  tar zxvf $1.gz -O > $1.xpand
+  openssl aes-256-cbc -d -in $1.xpand -out $1.final -k 1234
 
-#  need to add the tar/openssl commands to decrypt/decompress hex output
-#  tar -P -zxvf $1.xpand | openssl aes-128-cbc -out $dirname.tar.gz -k 1234
-  
 else usage
 fi
+
