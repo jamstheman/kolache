@@ -18,7 +18,29 @@ exfil.sh
 
 # this still needs some work...basic concept
 
-#!/bin/sh
-tcpdump -i eth0 'icmp[icmptype] = icmp-echo' > cut -c 92-94
+#!/bin/bash
 
-# will probably need to send output to a pipe vs a file as it needs to be timely
+# listener below
+# tcpdump -i eth0 'icmp[icmptype] = icmp-echo' -l |tee /root/xfil/ping.out
+
+
+
+# probably best to set this portion up on a crontab, every minute
+#
+
+file="/root/xfil/ping.out"
+
+if [ -file ]; then
+   awk '/86|66|96/' $file > $file.awk
+   fsize=$(du -sb $file.awk | awk '{ print $1 }')
+   if [ $fsize != "0" ]; then
+     echo "Caught DNS xfil request"
+     echo "Initiating catch.sh..."
+     sh catch.sh
+   fi
+
+   # cleanup
+   rm --interactive=never $file.awk
+fi
+
+
