@@ -17,8 +17,12 @@ class Proxy(SimpleHTTPServer.SimpleHTTPRequestHandler):
                 urlhandle = urllib.urlopen(self.path)
                 self.wfile.write(urlhandle.read())
         return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
+    def do_POST(self):
+        urlhandle = urllib.urlopen(self.path)
+        self.wfile.write(urlhandle.read())
 
 
 httpd = SocketServer.ForkingTCPServer(('', PORT), Proxy)
 print "serving at port", PORT
 httpd.serve_forever()
+
