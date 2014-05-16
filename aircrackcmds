@@ -1,3 +1,75 @@
+directly connect to router with ethernet cable
+log into the router on 192.168.1.1
+set root password
+set network lan0 interface to dhcp client
+connect router and computer to another router/hub
+connect via ssh
+
+opkg update
+opkg install kernel kmod-usb-storage kmod-fs-ext4 block-mount
+wget http://www.minipwner.com/images/minipwner.tar
+tar xf minipwner.tar
+cp -f ./fstab.1 /etc/config/fstab
+cp -f opkg.conf.1 /etc/opkg.conf
+cp -f profile.1 /etc/config/profile
+mkdir /mnt/usb
+/etc/init.d/fstab enable
+/etc/init.d/fstab start
+ls /mnt/usb
+ln -s /mnt/usb /opt
+ln -s /etc /mnt/usb/etc
+
+opkg update
+opkg install netcat
+opkg -dest usb install tar openssh-sftp-client nmap tcpdump aircrack-ng airpwn vim kismet-client
+opkg -dest usb install kismet-server perl curl dsniff nbtscan reaver snort samba36-client elinks
+opkg -dest usb install yafc sed sslstrip sshtunnel ptunnel openssl-util dhcpcd cryptsetup diffutils
+opkg -dest usb install ettercap python wireless-tools ruby coreutils-shred bind-dig xxd gawk cryptsetup-openssl
+
+
+
+
+
+
+commands not working:
+openssl
+pkill
+
+
+commands not installed:
+karma
+openvpn
+sws
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 airmon-ng start wlan0
 airodump-ng mon0
 
