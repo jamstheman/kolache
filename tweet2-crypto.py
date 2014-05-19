@@ -25,7 +25,9 @@ def encryption(privateInfo):
 	cipher = AES.new(secret)
 	# encodes you private info!
 	encoded = EncodeAES(cipher, privateInfo)
-	print 'encoded string', encoded
+	if len(encoded) > 140:
+		print "encoded string too large! try splitting your input in to smaller chunks"
+	print 'encoded string',encoded
 
 def decryption(encryptedString):
 	PADDING = '{'
