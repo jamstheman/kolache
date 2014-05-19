@@ -4,6 +4,7 @@
 ## The script will generate a random number between 
 ## 300 and 600 for the sleep function.
 ## (So it will sleep for between 5 and 10 minutes)
+## Would be started using a cron job every X minutes.
 ########
 
 ## Checking to see if this script is already running and just in a sleep state.
@@ -29,7 +30,7 @@ sleep 30s
 
 ## Attempting to get the page from Google, but will not write it to disk.
 ## If the wget completes successfully, we will exit and be done.
-## If there was an error, then we need to increase the "COUNT" and drop into the
+## If there was an error, then we need to increase the "COUNT" and run the
 ## while loop.
 ########
 
@@ -73,9 +74,15 @@ case ${COUNT} in
 	6)
 		echo "You are busted, time to get rid of everything."
 		echo "Here is where the wipe command goes."
+		## Using 'dd' to write 0's to the drive/disk
+		########
+		##dd if=/dev/zero of=/dev/sda2 bs=2048 conv=notrunc,noerror
+		## Using shred to force (-f) erase and add a final overwrite of zeros (-z)
+		## to the USB disk (/mnt/usb)
+		########
+		##shred -fuz /mnt/usb
 		echo "We have just wiped the drive - nothing to see here, move on."
 		break
 		;;
 esac
 done
-
