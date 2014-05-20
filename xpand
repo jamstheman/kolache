@@ -2,7 +2,8 @@
 
 p="/root/xfil/ping.out"
 x="/root/xfil/xfil.tcp"
-svr=192.168.181.210
+svr=192.241.245.110  #192.168.181.210  192.241.245.110
+
 
 
 listen_for_signal()
