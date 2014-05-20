@@ -26,8 +26,20 @@ def encryption(privateInfo):
 	# encodes you private info!
 	encoded = EncodeAES(cipher, privateInfo)
 	if len(encoded) > 140:
-		print "encoded string too large! try splitting your input in to smaller chunks"
+		print "strings will be broken down into twitter sized chunks"
+		print "tweet them in reverse order as they are displayed"
+		print "(i.e. first displayed are last tweeted)"
+		strindex1 = 0
+		strindex2 = 136
+		while True:
+			print encoded[strindex1:strindex2] + "==="
+			strindex1 = strindex2
+			strindex2 = strindex2+136
+			if strindex2 > len(encoded):
+				print encoded[strindex1:]
+				break
 	print 'encoded string',encoded
+	print "total length ",len(encoded)
 
 def decryption(encryptedString):
 	PADDING = '{'

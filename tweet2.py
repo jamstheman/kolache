@@ -15,6 +15,7 @@ memhdl.close()
 filehdl = open("tweet2.sh", "w")
 
 mostrecent = True
+tmpstr =""
 
 c=0
 while c < len(urldata):
@@ -35,9 +36,13 @@ while c < len(urldata):
 	prstr = urldata[ccont:urldata.find("</p>",ccont)]
 	# need to add memory of tweets already parsed
 	encstr = prstr[prstr.find(">")+1:]
-	decstr = decryption(encstr)
-	filehdl.write(decstr)
-	filehdl.write("\n")
+	if "===" in encstr:
+		tmpstr = tmpstr+encstr[:-3]
+	else:
+		decstr = decryption(encstr)
+		filehdl.write(decstr)
+		filehdl.write("\n")
+		tmpstr = ""
 	c = c + ccont + len(prstr)
 
 filehdl.close()
