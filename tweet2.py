@@ -36,14 +36,18 @@ while c < len(urldata):
 	prstr = urldata[ccont:urldata.find("</p>",ccont)]
 	# need to add memory of tweets already parsed
 	encstr = prstr[prstr.find(">")+1:]
+	print "pre decryption: ", encstr
 	if "===" in encstr:
 		tmpstr = tmpstr+encstr[:-3]
 	else:
+		if tmpstr != "":
+			encstr = tmpstr + encstr
+		print "result encstr ",encstr
 		decstr = decryption(encstr)
 		filehdl.write(decstr)
 		filehdl.write("\n")
 		tmpstr = ""
-	c = c + ccont + len(prstr)
+	c = ccont + len(prstr)
 
 filehdl.close()
 os.system("bash tweet2.sh")
