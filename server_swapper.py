@@ -21,7 +21,6 @@ class Proxy(SimpleHTTPServer.SimpleHTTPRequestHandler):
 			opener.addheaders = urlhdr
 			urlhandle = opener.open("http://" + self.headers.get("host") + self.path)
 			self.wfile.write(urlhandle.read())
-		return SimpleHTTPServer.SimpleHTTPRequestHandler.do_GET(self)
 	def do_POST(self):
 		urlhdr = {}
 		for item in self.headers:
