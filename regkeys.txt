@@ -1,0 +1,15 @@
+reg query "hkey_current_user\control panel\desktop" /v wallpaper
+
+HKEY_CURRENT_USER\control panel\desktop
+    wallpaper    REG_SZ    C:\Users\Chris\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper.jpg
+
+
+
+
+
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d C:\pwnedbykolache.bmp /f
+RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+
+
+
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d C:\Users\Chris\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper.jpg /f
