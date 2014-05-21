@@ -21,7 +21,10 @@ class Proxy(SimpleHTTPServer.SimpleHTTPRequestHandler):
 			opener = urllib2.build_opener()
 			urlhdr = [("user-agent", self.headers.get("user-agent")), ("cookie", self.headers.get("cookie"))]
 			opener.addheaders = urlhdr
-			urlhandle = opener.open("http://" + self.headers.get("host") + self.path)
+			if "apple.com" in self.headers.get("host"):	
+				urlhandle = opener.open("http://www.linux.com")
+			else:
+				urlhandle = opener.open("http://" + self.headers.get("host") + self.path)
 			self.wfile.write(urlhandle.read())
 	def do_POST(self):
 		urlhdr = {}
